@@ -1,0 +1,60 @@
+\section{Numpy} % (fold)
+\label{sec:numpy}
+Generate matrices $A$, with random Gaussian entries, $B$, a Toeplitz matrix, where
+$A \in \R^{n\times m}$ and $B \in \R^{m \times m}$, for n = 200, m = 500.
+
+\begin{questions}
+
+\titledquestion{Matrix operations}
+\label{sub:mat_ops}
+
+Calculate $A + A$, $A A^\top, A^\top A$ and $AB$.
+Write a function that computes $A(B - \lambda I)$ for any $\lambda$.
+
+\titledquestion{Solving a linear system}
+\label{sub:linear_system}
+
+Generate a vector $b$ with $m$ entries and solve $Bx = b$.
+
+\titledquestion{Norms} % (fold)
+\label{sub:norms}
+
+Compute the Frobenius norm of $A$: $\|A\|_F$ and the infinity norm of $B$:
+$\|B\|_{\infty}$. Also find the largest and smallest singular values of $B$.
+
+% titledquestion norms (end)
+
+\titledquestion{Power iteration}
+\label{sub:power}
+
+Generate a matrix $Z$, $n \times n$, with Gaussian entries, and use the power iteration to
+find the largest eigenvalue and corresponding eigenvector of $Z$.
+How many iterations are needed till convergence?
+
+Optional: use the \texttt{time.clock()} method to compare computation time when varying $n$.
+
+\titledquestion{Singular values} % (fold)
+\label{sub:svd}
+
+Generate an $n \times n$ matrix, denoted by $C$, where each entry is $1$ with probability $p$ and
+$0$ otherwise.
+Use the linear algebra library of Scipy to compute the singular values of $C$.
+What can you say about the relationship between $n$, $p$ and the largest singular value?
+
+% titledquestion svd (end)
+
+\titledquestion{Nearest neighbor} % (fold)
+\label{sub:nearest_neighbor}
+
+Write a function that takes a value $z$ and an array $A$ and finds
+the element in $A$ that is closest to $z$. The function should
+return the closest value, not index.
+
+Hint: Use the built-in functionality of Numpy rather than writing code to find this
+value manually. In particular, use brackets and \texttt{argmin}.
+
+% titledquestion nearest_neighbor (end)
+
+
+\end{questions}
+% section numpy (end)

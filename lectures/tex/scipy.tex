@@ -1,0 +1,112 @@
+\section{Scipy} % (fold)
+\label{sec:scipy}
+
+\begin{frame}
+\frametitle{What is SciPy?}
+SciPy is a library of algorithms and mathematical tools built to work with NumPy arrays.
+\vfill
+\begin{itemize}
+\item linear algebra - \textit{scipy.linalg}
+\item{statistics - \textit{scipy.stats}}
+\item{optimization - \textit{scipy.optimize}}
+\item{sparse matrices - \textit{scipy.sparse}}
+\item{signal processing - \textit{scipy.signal}}
+\item{etc.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Scipy Linear Algebra}
+    \framesubtitle{\url{http://docs.scipy.org/doc/scipy/reference/linalg.html}}
+
+    Slightly different from numpy.linalg.
+    Always uses BLAS/LAPACK support, so could be faster.
+
+    \vfill
+
+    Some more functions.
+
+    \vfill
+
+    Functions can be slightly different.
+
+\end{frame}
+
+% \begin{frame}\frametitle{Scipy Integration}
+%     \framesubtitle{}
+
+%     to do
+
+% \end{frame}
+
+\begin{frame}\frametitle{Scipy Optimization}
+    \framesubtitle{\url{http://docs.scipy.org/doc/scipy/reference/optimize.html}}
+
+\begin{itemize}
+    \item General purpose minimization: CG, BFGS, least-squares
+    \item Constrainted minimization; non-negative least-squares
+    \item Minimize using simulated annealing
+    \item Scalar function minimization
+    \item Root finding
+    \item Check gradient function
+    \item Line search
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Scipy Statistics}
+    \framesubtitle{\url{http://docs.scipy.org/doc/scipy/reference/stats.html}}
+
+    \begin{itemize}
+        \item Mean, median, mode, variance, kurtosis
+        \item Pearson correlation coefficient
+        \item Hypothesis tests (ttest, Wilcoxon signed-rank test, Kolmogorov-Smirnov)
+        \item Gaussian kernel density estimation
+    \end{itemize}
+
+See also SciKits (or scikit-learn).
+
+\end{frame}
+
+\begin{frame}\frametitle{Scipy sparse}
+    \framesubtitle{\url{http://docs.scipy.org/doc/scipy/reference/sparse.html}}
+
+    \begin{itemize}
+        \item Sparse matrix classes: CSC, CSR, etc.
+        \item Functions to build sparse matrices
+        \item sparse.linalg module for sparse linear algebra
+        \item sparse.csgraph for sparse graph routines
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Scipy signal}
+    \framesubtitle{\url{http://docs.scipy.org/doc/scipy/reference/signal.html}}
+
+    \begin{itemize}
+        \item Convolutions
+        \item B-splines
+        \item Filtering
+        \item Continuous-time linear system
+        \item Wavelets
+        \item Peak finding
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Scipy IO}
+    \framesubtitle{\url{http://docs.scipy.org/doc/scipy/reference/io.html}}
+
+    Methods for loading and saving data
+
+    \begin{itemize}
+        \item Matlab files
+        \item Matrix Market files (sparse matrices)
+        \item Wav files
+    \end{itemize}
+
+\end{frame}
+
+
+
+
+% section scipy (end)

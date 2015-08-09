@@ -1,0 +1,108 @@
+# jemdoc: menu{MENU}{getstarted.html}
+= CME 193 - Introduction to Scientific Python
+
+== Getting started
+
+Getting started with Python can be a little confusing, hopefully this webpage helps to get you going.
+
+=== Requirements
+
+There are two components to running Python (locally).
+
+. First, you need Python itself, obviously. For both Mac and Windows, it's easiest to install Python using Anaconda.
+. Second, you need an editor to write your code. This is independent of Python, and in fact you can use your editor to write code in other languages as well.
+
+Another option is to run Python in the cloud (see below)
+
+== Installing Python
+
+In this clase, we will be using Python 2.
+The following two methods are preferred for installing Python.
+
+Note that even though Macs come with Python, it is still recommended to
+install Python using either Anaconda or Homebrew.
+
+=== Anaconda
+
+One convenient method to set up your Python environment is using a free, pre-packaged
+distribution, such as [https://store.continuum.io/cshop/anaconda/ Anaconda] (Click the big bright blue button on the top right).
+This has the advantage that many relevant packages come pre-installed, possibly saving you some headaches later on. It also includes *pip*, the Python package manager.
+
+Note that while Anaconda also comes with the Anaconda launcher and a bunch of other tools, you should not be using any of these for this course.
+We only use Anaconda for the convenience of installation of Python and the main packages, not the other stuff that comes with it as well.
+
+=== Homebrew (Mac only)
+
+If you want a bit more control over your Python distribution, then using Homebrew to install Python is useful.
+It also installs the package manager *pip* for you, which is very useful.
+However, it does not come with additional modules, such as *numpy* or *scipy*,
+though they can be installed easily using *pip*.
+A short tutorial can be found [http://docs.python-guide.org/en/latest/starting/install/osx/ here].
+
+== Editor
+To write code, you need an editor.
+While there are many options, old and new, [http://www.sublimetext.com/ Sublime Text] is one you can't go wrong with. Note you can use it for free.
+A script is a simple file with text, such as
+
+~~~
+{hello.py}{python}
+a = 'Hello,'
+b = 'world!'
+print a + ' ' + b
+~~~
+
+which you can save to your filesystem using the editor.
+
+== Running code
+
+Now that you know how to write Python scripts, it's time to learn how to run them using Python.
+
+=== Mac
+
+Open the *terminal*, for example by searching for +terminal+ using the spotlight search function.
+
+To open the interpreter, simply enter *python*. To run a script, navigate to the folder that contains your script.
+Then simply run +python script.py+, given that +script.py+ is the name of your script.
+
+Online, you can find some good resources that introduce the terminal, such as
+. [http://mac.appstorm.net/how-to/utilities-how-to/how-to-use-terminal-the-basics/ How to Use Terminal: The Basics]
+. [http://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855 Navigating the Terminal: A Gentle Introduction]
+. [http://www.maclife.com/article/feature/25_terminal_tips_every_mac_user_should_know 25 Terminal Tips Every Mac User Should Know]
+. [http://jolts.stanford.edu/48/getting_started_with_linux Getting started with Linux, Section 3 and beyond] (Note that Linux and Mac have the same terminal)
+. [https://practicalunix.org/ Stanford course CS 1U 'Practical Unix']
+
+=== Windows
+
+Open the *command prompt* by searching for +cmd+ in the Start menu.
+This is the Windows version of the terminal.
+
+To open the interpreter, similar to the Mac terminal, we simply run +python+.
+
+To run a script, navigate to the folder that contains your script, and then run +python script.py+, given that +script.py+ is the file name.
+
+Also for Windows, there are some good resources about the command prompt
+
+. [http://dosprompt.info/ Command Prompt Basics - A Getting Started Guide]
+. [http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html Windows Command Prompt in 15 Minutes]
+
+== Pip
+
+To install new modules, make sure you have +pip+ installed.
+It comes with both Anaconda and Homebrew, so if you have used either of them, you are good.
+Otherwise, it is also rather straightforward to install +pip+: See the [http://pip.readthedocs.org/en/latest/installing.html documentation].
+
+Then, open the terminal / command prompt, and run +pip install module+, where +module+ is the name of the module.
+Note that you cannot run this from inside the Python interpreter.
+
+== Python in the cloud
+
+When you have trouble getting Python up and running, or if you have Windows and
+would like to use a Unix environment, then there is an alternative: using your browser.
+There are several possibilities, but to be on the same page, I suggest you use [c9.io Cloud 9].
+Cloud 9 will host your development environment on the cloud for free.
+
+Please create an account at [c9.io] if you are not able to run Python locally,
+so you can at least get started.
+
+
+

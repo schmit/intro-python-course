@@ -1,0 +1,105 @@
+\section{Control flow} % (fold)
+\label{sec:control_flow}
+Disclaimer: Some of the following problems are inspired by problems from \url{www.projecteuler.net}.
+Have a look if you are interested, there are some great challenges and Python is an excellent tool for solving them.
+
+
+\begin{questions}
+\titledquestion{Range}
+    Type \texttt{range(5)} in the interpreter, what does the interpreter return?
+    So what does \texttt{for i in range(5)} mean?
+
+    Let's also find out whether the interpreter can help us understand the object `\texttt{range(5)}' better.
+    Type \texttt{type(range(5))} in the interpreter.
+    More on this soon!
+
+\titledquestion{For loops}
+    Use a \texttt{for} loop to:
+
+    \begin{parts}
+        \part Print the numbers 0 to 100
+        \part Print the numbers 0 to 100 that are divisible by 7
+        \part Print the numbers 1 to 100 that are divisible by 5 but not by 3
+        \part Print for each of the numbers $x = 2,\ldots 20$,
+            all numbers that divide $x$, excluding $1$ and $x$.
+            Hence, for \texttt{18}, it should print \texttt{2 3 6 9}.
+    \end{parts}
+
+    Hint: see \url{https://docs.python.org/2.7/library/functions.html#range}.
+
+\titledquestion{Simple while loops} % (fold)
+    Instead of using a for loop, use a while loop to:
+
+    \begin{parts}
+        \part Print the numbers 0 to 100
+        \part Print the numbers 0 to 100 that are divisible by 7
+    \end{parts}
+
+\titledquestion{Hangman update 1}
+\label{sub:hangman_1}
+
+    Let's reconsider the hangman code we saw in class.\footnote{To obtain the Hangman code, either use \texttt{\$ git clone https://github.com/schmit/hangman.git} (if you have git / use Cloud9)
+    or dowload the code directly: \url{https://github.com/schmit/hangman/archive/master.zip}}
+    We noted that the computer agent is not very good at guessing.
+    Update the code such that the computer guesses `e' first, and 'a' second.
+
+    Use the simulate.py script to see if this improves performance.
+
+    Feel free to play around and see if you can do better!
+
+\titledquestion{While loops} % (fold)
+\label{sub:while_loop}
+
+    Use a \texttt{while} loop to find the first 20 numbers that are divisible by 5, 7 and 11, and print them
+    Hint: store the number found so far in a variable.
+
+    Pseudo-code:
+
+    \begin{verbatim}
+        number found = 0
+        x = 11
+        while number found is less than 20:
+            if x is divisible by 5, 7 and 11:
+                print x
+                increase number found by 1
+            increase x by 1
+    \end{verbatim}
+% titledquestion while_loop (end)
+
+\titledquestion{More while loops} % (fold)
+\label{sub:more_while_loops}
+
+    The smallest number that is divisible by 2, 3 and 4 is 12.
+    Find the smallest number that is divisible by all integers between 1 and 10.
+
+% titledquestion more_while_loops (end)
+
+\titledquestion{Collatz sequence} % (fold)
+\label{sub:collatz_sequence}
+
+A Collatz sequence is formed as follows:
+We start with some number $x_0$, and we find the next number in the sequence by
+\[
+    x_{i+1} = \begin{cases}
+        x_i / 2 & \text{ if $x_i$ is even}\\
+        3x_i + 1 & \text{ if $x_i$ is odd}
+    \end{cases}
+\]
+If $x_i = 1$, we stop iterating and have found the full sequence.
+
+For example, if we start with $x_0 = 5$, we obtain the sequence:
+\begin{verbatim}
+    5 16 8 4 2 1
+\end{verbatim}
+
+It is conjectured, though not proven, that every chain eventually ends at $1$.
+
+Print the Collatz sequence starting at $x_0 = 103$.
+
+% titledquestion collatz_sequence (end)
+\end{questions}
+
+% section control_flow (end)
+
+
+

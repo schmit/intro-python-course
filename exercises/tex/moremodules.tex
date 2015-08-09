@@ -1,0 +1,26 @@
+\section{More modules} % (fold)
+\label{sec:more_modules}
+\begin{questions}
+\titledquestion{Regular expressions to find email addresses}
+
+At \url{http://stanford.edu/~schmit/cme193/ex/data/emailchallenge.txt} you find
+some text data with some email addresses.
+Your task is to write a script that finds these email addresses (and ignores the fake ones).
+
+First, use the \texttt{requests} library to download the data directly into Python (so don't save the file locally).
+Then use \texttt{re} to match the email addresses.
+Make sure to extract the local part and domain part (before and after \texttt{@}) separately.
+
+You should find 7 email addresses.
+
+Hint: Although written for the Ruby regex, \url{http://rubular.com/} can be very useful
+to play around with your pattern. The Python regular expression should be identical or almost identical.
+
+\titledquestion{Flask}
+
+Write a Flask app that displays the current date and time.
+
+Hint: Use the \texttt{datetime} module to get the current time.
+
+\end{questions}
+% section more_modules (end)

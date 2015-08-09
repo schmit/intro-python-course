@@ -1,0 +1,24 @@
+# jemdoc: menu{MENU}{portfolio.html}
+= CME 193 - Introduction to Scientific Python
+
+== Portfolio
+
+You are required to submit a portfolio with all your work for this class.
+The portfolio should demonstrate that you attempted the assigned exercises,
+and that you have gained a basic understanding of Python.
+
+*You are only expected to do 2/3rds of the exercises, so feel free to skip ones
+that you don't like.
+Also, there is no need for a writeup.*
+For example, for the first few exercises, you won't write any scripts.
+You therefore don't have to add your work for those exercises to your portfolio.
+
+While you should not devote time and energy to making the portfolio extra
+pretty, you are expected to hand files that are well structured and your
+code should be well commented.
+
+You should submit the portfolio as a /zip/ file to the Dropbox on Coursework.
+The portfolio should have the following structure
+
+- A folder for every section in the exercises file (e.g. a folder /basics/).
+- A single /py/ file per exercise, named according to the exercise name.

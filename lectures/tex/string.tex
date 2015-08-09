@@ -1,0 +1,95 @@
+\section{Strings} % (fold)
+\label{sec:strings}
+
+\begin{frame}\frametitle{Strings}
+    \framesubtitle{}
+
+    Let's quickly go over \emph{strings}.
+
+
+    \begin{itemize}
+        \item Strings hold a sequence of characters.
+        \item Strings are \emph{immutable}
+        \item We can slice strings just like lists and tuples
+        \item Between quotes or triple quotes
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Everything can be turned into a string!}
+    \framesubtitle{}
+
+    % to edit
+
+    We can turn anything in Python into a string using \texttt{str}.
+
+    \vfill
+
+    This includes dictionaries, lists, tuples, etc.
+
+\end{frame}
+
+\begin{frame}\frametitle{String formatting}
+    \framesubtitle{}
+
+    \begin{itemize}
+        \item Special characters: \textbackslash n, \textbackslash t,
+        \textbackslash b, etc
+        \item Add variables: \%s, \%f, \%e, \%g, \%d, or use \texttt{format}
+    \end{itemize}
+
+    \codeblock{code/string_format.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Split}
+    \framesubtitle{}
+
+    To split a string, for example, into seperate words, we can use \texttt{split()}
+
+    \codeblock{code/string_split.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Split}
+    \framesubtitle{}
+
+    What if we have a comma seperated file with numbers seperated by commas?
+
+    \codeblock{code/string_split_numbers.py}
+
+    Use the optional argument in \texttt{split()} to use a custom seperator.
+
+    \vfill    \pause
+
+    What to use for a tab seperated file?
+
+\end{frame}
+
+\begin{frame}\frametitle{UPPER and lowercase}
+    \framesubtitle{}
+
+    There are a bunch of useful string functions, such as \texttt{.lower()} and \texttt{.upper()} that turn your string in lower- and uppercase.
+
+    Note: To quickly find all functions for a string, we can use \texttt{dir}
+
+    \vfill
+
+    \texttt{text = 'hello'}
+
+    \texttt{dir(text)}
+
+\end{frame}
+
+\begin{frame}\frametitle{join}
+    \framesubtitle{}
+
+    Another handy function: \texttt{join}.
+
+    We can use join to create a string from a list.
+
+    \codeblock{code/string_join.py}
+
+\end{frame}
+
+% section strings (end)

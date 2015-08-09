@@ -1,0 +1,78 @@
+\section{Functions} % (fold)
+\label{sec:functions}
+
+% This sheet is a little long
+
+\begin{questions}
+
+\titledquestion{Hello} % (fold)
+\label{sub:hello_world}
+
+\begin{parts}
+    \part Write a function \verb\hello_world\ that prints \verb\'Hello, world!'\
+    \part Write a function \verb\hello_name(name)\ that prints \verb\'Hello, name!'\
+    where \texttt{name} is a string.
+    \part Explain the difference between the \texttt{print} and \texttt{return}
+    keywords.
+    What would change if instead of \texttt{print} you would use \texttt{return}?
+\end{parts}
+
+% titledquestion hello_world (end)
+
+\titledquestion{Polynomial} % (fold)
+\label{sub:polynomial}
+
+Write a function that evaluates the polynomial $3x^2 - x + 2$.
+
+% titledquestion polynomial (end)
+
+\titledquestion{Maximum} % (fold)
+\label{sub:maximum}
+
+Write a function \verb\my_max(x,y)\ that returns the maximum of $x$ and $y$.
+Do not use the \texttt{max} function, but use \texttt{if} instead in following two ways:
+\begin{parts}
+    \part Use both \texttt{if} and \texttt{else}.
+    \part Use \texttt{if} but not \texttt{else} (nor \texttt{elif}).
+\end{parts}
+
+% titledquestion maximum (end)
+
+\titledquestion{Primes} % (fold)
+\label{sub:primes}
+
+\begin{parts}
+    \part Write a function \verb\is_prime(n)\ that returns \texttt{True} only if $n$ is prime.
+    \part Note that apart from 2 and 3, all primes are of the form $6k \pm 1$
+        (though not all numbers of the form $6k \pm 1$ are prime of course).
+        Using this, we can improve the computation time by a factor $3$.
+        Update your function to use this.
+    \part Write a function that returns all primes up to $n$.
+    \part Write a function that returns the first $n$ primes.
+\end{parts}
+
+% titledquestion primes (end)
+
+\titledquestion{Root finding} % (fold)
+\label{sub:root_finding}
+
+Suppose $f$ is a continuous function and $f(a) < 0$ and $f(b) > 0$ for some known $a$ and $b$.
+For simplicity, assume $a < b$.
+Then, there must exist some $c$ such that $f(c) = 0$.
+
+\begin{parts}
+    \part Write a function \verb|root(f, a, b)| that takes a function \verb|f| and two floats
+\verb|a| and \verb|b| and returns the root \verb|c|. Hint: check the sign at the midpoint of the interval.
+    \part Remove the assumption that $a < b$, and that $f(a) < 0$ and $f(b) > 0$, if
+    your current code relies on them.
+    \part Add a check that prints\\ \verb|'function evals have same sign'|\\ if $f(a) >0$
+    and $f(b) >0$ or if $f(a) <0 $ and $f(b) < 0$.
+\end{parts}
+
+
+
+% titledquestion root_finding (end)
+
+\end{questions}
+
+% section functions (end)

@@ -1,0 +1,27 @@
+# jemdoc: menu{MENU}{resources.html}
+= CME 193 - Introduction to Scientific Python
+
+== Resources
+
+On this page, you can find some useful resources for further exploration
+
+=== Documentation
+
+The official [https://docs.python.org/2/ Python documentation] should be your first
+stop when looking for information.
+
+=== Further reading
+
+- [https://wiki.python.org/moin/SimplePrograms Simple programs]
+- [https://developers.google.com/edu/python/ Google's Python class]
+- [https://training.enthought.com/courses Enthought courses on Python] (It is easy and fast to get a free academic license, which makes all concent free)
+- [http://google-styleguide.googlecode.com/svn/trunk/pyguide.html Google's Python style guide]
+- [http://www.diveintopython.net/toc/index.html Dive into Python]
+- [http://www.tutorialspoint.com/python/index.htm tutorialspoint Python tutorial]
+- [https://docs.python.org/2/tutorial/introduction.html An Informal Introduction to Python]
+- [https://docs.python.org/2/tutorial/ The Python Tutorial]
+- [http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2011/readings/ MIT's "A gentle introduction to programming"]
+- [http://www-inst.eecs.berkeley.edu/~selfpace/cs9honline/ CS 9H, UC-Berkeley self-paced Python course]
+- [https://github.com/jrjohansson/scientific-python-lectures/blob/master/README.md Lectures on scientific computing with Python]
+- [http://nbviewer.ipython.org/gist/rpmuller/5920182 A Crash Course in Python for Scientists]
+

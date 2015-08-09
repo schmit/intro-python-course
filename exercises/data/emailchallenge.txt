@@ -1,0 +1,12 @@
+Hello alice@stanford.com world!
+What's up @ life?
+A Spanish email address end with .es, as in: bob@spain.es but not charlie@germany,de
+Let's try to find some easy email@addresses.com
+And some harder ones, such as british@gmail.co.uk, can you find me?
+This one surely@isn't.com an email address
+Is your email address bob@gmail.com?
+really this@must.be.
+Some things might come really@damn close.
+Did you know "very.unusual.@.unusual.com"@example.com is actually valid email
+address (see http://en.wikipedia.org/wiki/Email_address)?
+Did you find them all?

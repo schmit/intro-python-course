@@ -1,0 +1,42 @@
+\section{Iterators} % (fold)
+\label{sec:iterators}
+\begin{questions}
+\titledquestion{Collatz sequence} % (fold)
+\label{sub:collatz_sequence}
+
+Write a generator that generates the Collatz sequence with initial value $n$.
+Use this to print out the Collatz sequence started at 103
+
+Recall the Collatz sequence problem from last week.
+A Collatz sequence is formed as follows:
+We start with some number $x_0$, and we find the next number in the sequence by
+\[
+    x_{i+1} = \begin{cases}
+        x_i / 2 & \text{ if $x_i$ is even}\\
+        3x_i + 1 & \text{ if $x_i$ is odd}
+    \end{cases}
+\]
+If $x_i = 1$, we stop iterating and have found the full sequence.
+
+% titledquestion collatz_sequence (end)
+
+\titledquestion{Collatz array using Numpy} % (fold)
+\label{sub:collatz_array}
+
+Use the Collatz generator you wrote in the previous exercise to generate a vector
+with as ellements the Collatz sequence started at 61.
+
+Hint: use the \texttt{np.fromiter} function.
+
+% titledquestion collatz_array (end)
+
+\titledquestion{Prime numbers} % (fold)
+\label{sub:prime_numbers}
+
+Write an iterator that iterates over the first $n$ prime numbers.
+Use this to print out the first 10,000 primes.
+
+% titledquestion prime_numbers (end)
+
+\end{questions}
+% section iterators (end)

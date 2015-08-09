@@ -1,0 +1,112 @@
+\section{Control statements} % (fold)
+\label{sec:control_statements}
+
+\begin{frame}\frametitle{Control statements}
+    \framesubtitle{More control over your program}
+
+    Control statements allow you to do more complicated tasks.
+
+    \begin{itemize}
+        \item If
+        \item For
+        \item While
+    \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}\frametitle{If statements}
+    \framesubtitle{}
+
+    Using \texttt{if}, we can execute part of a program conditional on some statement
+    being true.
+
+    \codeblock{code/control_if.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Indentation}
+    \framesubtitle{}
+
+    In Python, blocks of code are defined using indentation.
+
+    \vfill
+
+    This means that everything indented after an \texttt{if} statement
+    is only executed if the statement is \texttt{True}.
+
+    If the statement is \texttt{False}, the program skips all indented code
+    and resumes at the first line of unindented code
+
+    \codeblock{code/control_indentation.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{If-Else statement}
+    \framesubtitle{}
+
+    We can add more conditions to the If statement using \texttt{else} and
+    \texttt{elif} (short for else if)
+
+    \codeblock{code/control_elif.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{For loops}
+    \framesubtitle{}
+
+    Very often, one wants to repeat some action. This can be achieved by a for loop
+
+    \codeblock{code/control_for.py}
+
+    Here, \texttt{range(n)} gives us a \emph{list} with integers $0,\ldots,n-1$.
+    More on this later!
+
+\end{frame}
+
+\begin{frame}\frametitle{While loops}
+    \framesubtitle{}
+
+    When we not know how many iterations are needed, we can use \texttt{while}.
+
+    \codeblock{code/control_while.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Continue}
+    \framesubtitle{}
+
+    \texttt{continue} continues with the next iteration of the smallest enclosing loop.
+
+    \pause
+    \codeblock{code/control_continue.py}
+
+    from: Python documentation
+
+\end{frame}
+
+\begin{frame}\frametitle{Break}
+    \framesubtitle{}
+
+    The \texttt{break} statement allows us to jump out of the smallest enclosing
+    \texttt{for} or \texttt{while} loop.
+    \vfill\pause
+
+    Finding prime numbers:
+    \codeblock{code/control_break.py}
+
+    from: Python documentation
+
+\end{frame}
+
+\begin{frame}\frametitle{Pass}
+    \framesubtitle{}
+
+    The \texttt{pass} statement does nothing, which can come in handy when you are
+    working on something and want to implement some part of your code later.
+
+    \codeblock{code/control_pass.py}
+
+\end{frame}
+
+% section control_statements (end)

@@ -1,0 +1,59 @@
+\documentclass{exam}
+
+\usepackage{amsmath}
+%\usepackage{fullpage}
+\usepackage{amssymb}
+%\usepackage{bbm}
+% \usepackage{fancyhdr}
+%\usepackage{paralist}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage[pdftex,colorlinks=true, urlcolor = blue]{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{headandfoot}
+\firstpageheader{CME 193}{Introduction to Python}{Exercises}
+\firstpageheadrule
+\runningheader{CME 193}{Introduction to Python}{Exercises}
+\runningheadrule
+
+\newcommand{\p}{\ensuremath{\mathbf{P}}}
+\renewcommand{\Pr}[1]{\ensuremath{\p \left \{ #1 \right \}}}
+\newcommand{\nti}{\ensuremath{n \to \infty}}
+\newcommand{\I}{\ensuremath{\operatorname{I}}}
+\newcommand{\One}[1]{\ensuremath{\mathbbm{1}_{\left \{ #1 \right \}}}}
+\newcommand{\E}{\ensuremath{\mathbf{E}}}
+\newcommand{\Ex}[2][]{\ensuremath{\E_{#1} \left[ #2 \right]}}
+\newcommand{\var}{\ensuremath{\operatorname{Var}}}
+\newcommand{\cov}{\ensuremath{\operatorname{Cov}}}
+\newcommand{\F}{\ensuremath{\mathcal{F}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\NormRV}[2]{\ensuremath{\operatorname{N}\left(#1, #2\right)}}
+\newcommand{\BetaRV}[2]{\ensuremath{\operatorname{Beta}\left(#1, #2\right)}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\bb}{\mathbf{b}}
+
+\begin{document}
+\qformat{\textbf{Exercise \thesection.\thequestion: \thequestiontitle} \hfill}
+  \input{tex/basics.tex}
+  \input{tex/control.tex}
+  \input{tex/functions.tex}
+  \input{tex/lists.tex}
+  \input{tex/tuples.tex}
+  \input{tex/dicts.tex}
+  \input{tex/fileio.tex}
+  \input{tex/classes}
+  \input{tex/numpy}
+  \input{tex/scipy}
+  \input{tex/mpl}
+  \input{tex/recursion.tex}
+  \input{tex/iterator}
+  \input{tex/exception}
+  \input{tex/unittest}
+  \input{tex/moremodules}
+
+\end{document}
+

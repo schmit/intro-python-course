@@ -1,0 +1,91 @@
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+\RequirePackage{color}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+
+% Shortcuts
+\newcommand{\ds}\displaystyle
+\newcommand{\mbb}\mathbb
+\newcommand{\mc}\mathcal
+\newcommand{\del}\nabla
+
+\newcommand{\Fou}{\mc{F}}
+\newcommand{\InvFou}{\mc{F}^{-1}}
+
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\e}{\mathbb{E}}
+\newcommand{\m}[1]{\mathbf{#1}}
+
+% Distributions
+\newcommand{\distribs}[1]{D^{\prime}(#1)}
+
+% C infinity functions with compact support
+\newcommand{\ccinf}[1]{C^{\infty}_c(#1)}
+
+% 1-Locally integrable functions
+\newcommand{\locint}[1]{L^1_{loc}(#1)}
+
+% Fields/Vector spaces
+\newcommand{\Rn}{\mbb{R}^n}
+\newcommand{\Cn}{\mbb{C}^n}
+\newcommand{\Fn}{\mbb{F}^n}
+
+% easy sums, products, functions
+\newcommand{\ssum}[3]{\displaystyle\sum\limits_{#1}^{#2} #3}
+\newcommand{\sprod}[3]{\displaystyle\prod\limits_{#1}^{#2} #3}
+\newcommand{\sfunc}[3]{\displaystyle #1: #2 \rightarrow #3}
+
+% eigenvalues and singular values
+\newcommand{\sigmin}{\sigma_{\min}}
+\newcommand{\sigmax}{\sigma_{\max}}
+\newcommand{\eigmin}{\lambda_{\min}}
+\newcommand{\eigmax}{\lambda_{\max}}
+
+% norms
+%\DeclarePairedDelimiter{\normof}{||}{||}
+% taken from dgleich
+\DeclarePairedDelimiter{\absof}{|}{|}
+\DeclarePairedDelimiter{\BraceOf}{\{}{\}}
+\DeclarePairedDelimiter{\BracketOf}{[}{]}
+\DeclarePairedDelimiter{\ParensOf}{(}{)}
+
+\definecolor{thegreen}{rgb}{0,.5,0}
+\definecolor{comment-green}{rgb}{0,.3,0}
+\definecolor{theblue}{rgb}{0,0,.8}
+\definecolor{light-gray}{gray}{0.98}
+\definecolor{comment-color}{rgb}{0,0,.8}
+\definecolor{string-color}{rgb}{0,.75,0}
+\definecolor{border-blue}{rgb}{0,0,.6}
+
+\lstset{% use our version of highlighting
+  language=python,      % using python
+  keywordstyle={\color{teal}\bfseries},          % keywords
+  commentstyle=\color{comment-color},         % comments
+  stringstyle=\color{string-color},                   %strings
+}
+
+\lstset{
+  basicstyle={\ttfamily\small},  % use font and smaller size
+  basewidth={0.5em,0.5em},
+  showstringspaces=false,                   % do not emphasize spaces in strings
+  tabsize=2,                                % number of spaces of a TAB
+  aboveskip={0\baselineskip},               % a bit of space above
+  columns=fixed,                            % nice spacing
+  lineskip=-1pt
+}
+
+% Code block
+\newcommand{\codeblock}[1]{
+\begin{center}
+\begin{tabular}{c}
+\setlength{\fboxsep}{6pt}
+\lstset{morekeywords={sorted, yield,self, with, as}}
+\fcolorbox{structure}{light-gray}{\lstinputlisting{#1}}
+\end{tabular}
+\end{center}
+}
+
+
+
+

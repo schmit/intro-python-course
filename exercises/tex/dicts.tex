@@ -1,0 +1,127 @@
+\section{Dictionaries} % (fold)
+\label{sec:dictionaries}
+\begin{questions}
+\titledquestion{Printing a dictionary} % (fold)
+\label{sub:printing_a_dictionary}
+
+Write a function that prints key-value pairs of a dictionary.
+
+% titledquestion printing_a_dictionary (end)
+
+\titledquestion{Histogram} % (fold)
+\label{sub:histogram}
+
+Write a function that takes a list, and returns a dictionary with
+keys the elements of the list and as value the number of occurances of
+that element in the list.
+
+After you are done, look up `python collections counter' in Google.
+Could you use a counter instead?
+
+% titledquestion histogram (end)
+
+\titledquestion{Get method} % (fold)
+\label{sub:get_method}
+
+Dictionaries have a \texttt{get} method, which takes a key and a default value.
+If the key is in the dictionary, it returns the value, otherwise, it returns the
+default value.
+
+Rewrite your code from the previous problem to make use of this \texttt{get} method.
+
+% titledquestion get_method (end)
+
+\titledquestion{Random text generator}
+\label{sub:random_text_generator}
+
+In this question we will start implementing a random text generator.
+The generated phrases somewhat resemble English, but are usually nonsense.
+Next week, after we learn about file I/O, we are ready to complete the code.
+
+To generate sentences, we first construct a so-called Markov chain based on actual text data.
+This is a very basic language model.
+We can then sample paths from this Markov chain to create new phrases.
+This is actually easier than it sounds:
+
+A Markov chain consists of states, and transition probabilities between states:
+i.e. when I am in state A, what is the probability that I'll go to state B?
+
+We focus on the simple case where the state will be the current word.
+Consider the example sentence `the fire and the wind.'
+Then, the states that we move through are
+\[
+    \text{BEGIN} \to \text{the} \to \text{fire} \to \text{and} \to \text{the} \to \text{wind.} \to \text{END}
+\]
+where `BEGIN' and `END' are special states for the beginning and the end of the sentence.
+To find the transition probabilities, we go over a large body of text and
+record current word and the next word.
+In the above example, `BEGIN' is followed by `the', and `the' is followed by
+`fire' and `wind'.
+
+We won't be computing actual probabilities.
+Instead, we create a dictionary that,
+for every word, contains all the words that follow it.
+To generate a phrase, we start at the `BEGIN' state, and pick randomly one word
+from the list of words that follows the `BEGIN' state.
+Then we look up which words follow that word, and again pick one word at random, until
+we hit the `END' state, which signals that we are done.
+
+Before you get started, download the starter code by using\\
+\texttt{\$ git clone https://github.com/schmit/Markov-chain-startercode.git} (if you have git / use Cloud9)
+    or dowload the code directly:\\ \url{https://github.com/schmit/Markov-chain-startercode/archive/master.zip}
+
+Then
+\begin{itemize}
+    \item Implement the \texttt{process\_line} function, which takes a line as input,
+    and returns a list with tuples with the current state, and the next state.
+    \item Implement the \texttt{process\_textfile} function, which loops over
+    text, calls \texttt{process\_line} to extract the transitions, and adds these to
+    a dictionary. For now, do not worry about reading data from a file, the lines
+    are given as elements of the list \texttt{f}.
+    \item Implement the \texttt{generate\_line} function, which generates random
+    phrases based on a dictionary with transitions.
+\end{itemize}
+See \texttt{markov.py} for a more detailed description of each function.
+
+To run the code, use \texttt{python markov.py <filename>}.
+Since we are not using any files yet, replace \texttt{<filename>} with a random word.
+
+\titledquestion{Vector functions} % (fold)
+\label{sub:vector_multiply}
+
+Let's implement some vector functions.
+There are two types of vectors, normal or dense vectors, which
+we can represent using lists.
+For sparse vectors, where many of the elements are zero,
+this is inefficient.
+Instead, we use a dictionary with keys the indices of non-zero values, and then the value
+corresponding to the key is the value of the vector at that index.
+Hence, the vector $[1, 2, 4]$ can be stored as a list: \texttt{[1, 2, 4]}
+or as a dictionary \texttt{\{0:1, 1: 2, 2: 4\}}.
+
+\begin{parts}
+    \part Write a function that adds two (dense) vectors
+    \part Write a function that multiplies (i.e. inner product) two (dense) vectors
+    \part Write a function that adds two sparse vectors
+    \part Write a function that multiplies two sparse vectors
+    \part Write a function that adds a sparse vector and a dense vector
+    \part Write a function that multiplies a sparse vector and a dense vector
+\end{parts}
+
+% titledquestion vector_multiply (end)
+
+\titledquestion{Reverse look-up} % (fold)
+\label{sub:reverse_look_up}
+
+Dictionaries are made to look up values by keys.
+Suppose however, we want to find the key that is associated with some value.
+Write a function that takes a dictionary and a value, and returns the key
+associated with this value.
+
+What challenges do you face?
+How would you deal with those challenges?
+
+% titledquestion reverse_look_up (end)
+
+\end{questions}
+% section dictionaries (end)

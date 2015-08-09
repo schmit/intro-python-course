@@ -1,0 +1,228 @@
+\section{Exception handling} % (fold)
+\label{sec:exception_handling}
+
+
+\begin{frame}\frametitle{Wordcount}
+    \framesubtitle{An example}
+
+    Recall the wordcount exercise:
+
+    \vfill
+
+    Write a function that takes a filename, and returns the 20 most common words.
+
+\end{frame}
+
+\begin{frame}\frametitle{}
+    \framesubtitle{}
+
+    Suppose we have written a function \texttt{topkwords(filename, k)}
+
+    \vfill
+
+    Instead of entering filename and value of k in the script, we can also run it
+    from the terminal.
+
+\end{frame}
+
+\begin{frame}\frametitle{Parse input from command line}
+    \framesubtitle{}
+
+    The \texttt{sys} module allows us to read the terminal command that
+    started the script:
+
+    \codeblock{code/exception_argv.py}
+
+    \pause\vfill
+
+    \texttt{sys.argv} holds a list with command line arguments passed to a
+    Python script.
+
+\end{frame}
+
+\begin{frame}\frametitle{Back to the wordcount example}
+    \framesubtitle{}
+
+    \codeblock{code/exception_wc.py}
+
+    \pause
+
+    Issues?
+
+\end{frame}
+
+\begin{frame}\frametitle{Issues}
+    \framesubtitle{}
+
+    \begin{itemize}
+        \item What if the file does not exist?
+        \item What if the second argument is not an integer?
+        \pause
+        \item What if no command line arguments are supplied?
+    \end{itemize}
+    \pause
+
+    All result in errors:
+
+    \begin{itemize}
+        \item IOError
+        \item ValueError
+        \item IndexError
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Exception handling}
+    \framesubtitle{}
+
+    What do we want to happen when these errors occur? Should the program simply crash?
+
+    \pause
+
+    No, we want it to gracefully handle these
+
+    \begin{itemize}
+        \item IOError: Tell the user the file does not exist.
+        \item ValueError, IndexError: Tell the user what the format of the command
+        line arguments should be.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Try ... Except}
+    \framesubtitle{}
+
+    \codeblock{code/exception_wc2.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Try ... Except}
+
+    \begin{itemize}
+        \item The try clause is executed
+        \item If no exception occurs, the except clause is skipped
+        \pause
+        \item If an exception occurs, the rest of the try clause is skipped.
+        Then if the exception type is matched, the except clause is executed.
+        Then the code continues after the try statement
+        \pause
+        \item If an exception occurs with no match in the except clause, execution
+        is stopped and we get the standard error
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{A naked except}
+    \framesubtitle{}
+
+    We can have a naked except that catches any error:
+    \codeblock{code/exception_except.py}
+
+    Use this with extreme caution though, as genuine bugs might be impossible
+    to correct!
+
+\end{frame}
+
+\begin{frame}\frametitle{Try Except Else}
+    \framesubtitle{}
+
+    Else clause after all except statements is executed after successful
+    execution of the try block (hence, when no exception was raised)
+
+    \codeblock{code/exception_else.py}
+
+    \textbf{Why?} Avoids catching exception that was not protected
+
+    E.g. consider \texttt{f.readlines} raising an \texttt{IOError}
+
+    \vfill
+
+    \scriptsize{Example from Python docs}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Raise}
+    \framesubtitle{}
+
+    We can use \texttt{Raise} to raise an exception ourselves.
+
+    \begin{verbatim}
+>>> raise NameError('Oops')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+NameError: Oops
+    \end{verbatim}
+
+\end{frame}
+
+% \begin{frame}[fragile]\frametitle{Raise (2)}
+%     \framesubtitle{}
+
+%     Furthermore, we can use raise to re-raise an exception that we
+%     do not intend to handle
+
+%     \begin{verbatim}
+% >>> try:
+% ...     raise NameError('Oops')
+% ... except NameError:
+% ...     print 'An exception flew by!'
+% ...     raise
+% ...
+% An exception flew by!
+% Traceback (most recent call last):
+%   File "<stdin>", line 2, in ?
+% NameError: Oops
+%     \end{verbatim}
+
+% \end{frame}
+
+\begin{frame}\frametitle{Finally}
+    \framesubtitle{}
+
+    The \texttt{finally} statement is always executed before leaving the
+    \texttt{try} statement, whether or not an exception has occured.
+
+    \codeblock{code/exception_finally.py}
+
+    \pause
+
+    Useful in case we have to close files, closing network connections etc.
+
+\end{frame}
+
+\begin{frame}\frametitle{Raising our own exceptions: Rational class}
+
+    Recall the Rational class we considered a few lectures ago:
+
+    \codeblock{code/classes_rat_init.py}
+
+    What if \texttt{q = 0}?
+
+\end{frame}
+
+\begin{frame}\frametitle{Rational class}
+
+\codeblock{code/exception_rational.py}
+
+... Not really anything!
+
+\vfill
+\scriptsize{Rational class: \url{https://gist.github.com/schmit/875840d1a231526b572e}}
+
+\end{frame}
+
+\begin{frame}\frametitle{Making the necessary change}
+
+If \texttt{q = 0}, then raise an exception!
+
+Which one?
+
+\pause
+
+\codeblock{code/exception_rational_fix.py}
+
+In the above example, where is the exception raised?
+
+\end{frame}
+
+% section exception_handling (end)

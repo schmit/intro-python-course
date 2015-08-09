@@ -1,0 +1,45 @@
+# jemdoc: menu{MENU}{python3.html}
+= CME 193 - Introduction to Scientific Python
+
+== Python 3
+
+While we will be using Python 2, it is good to know about the newest version of Python: Python 3.
+Python 3 is a completely revamped version of Python, and it is incomptable with Python 2.
+However, the differences are not that big and Python 3 is easy to pick up after learning Python 2.
+
+== Installing Python 3
+
+=== On Mac OS X
+
+Here are quick and dirty instructions on how to install Python 3 on Mac OS X.
+There are much more in depth guides to be found on the web, so please use your
+favorite search engine if you get stuck.
+
+*Using Homebrew*
+~~~
+{Install Homebrew}
+ruby -e "$(curl -fsSL https:\/\/raw.github.com\/Homebrew\/homebrew\/go\/install)"
+~~~
+
+~~~
+{Install required packages}
+brew install gcc
+
+brew install freetype
+~~~
+
+~~~
+{Install Python}
+brew install python3
+~~~
+
+~~~
+{Install modules}
+pip3 install numpy
+
+pip3 install scipy
+
+pip3 install matplotlib
+
+pip3 install ipython
+~~~

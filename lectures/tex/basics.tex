@@ -1,0 +1,593 @@
+\section{Basics} % (fold)
+\label{sec:basics}
+
+\begin{frame}\frametitle{How to install Python}
+    \framesubtitle{version 2.6+}
+
+    Many alternatives, but I suggest installing using a prepackaged distribution, such as Anaconda
+
+    \vfill
+
+    \url{https://store.continuum.io/cshop/anaconda/}
+
+    \vfill
+
+    This is very easy to install and also comes with a lot of packages.
+
+    \vfill
+
+    See the getting started instructions on the course website for more information.
+
+\end{frame}
+
+\begin{frame}\frametitle{Packages}
+
+    Packages enhance the capabilities of Python, so you don't have
+    to progam everything by yourself (it's faster too!).
+
+    \vfill
+
+    For example: Numpy is a package that adds many linear algebra capabilities, more on that later
+
+\end{frame}
+
+\begin{frame}\frametitle{How to install packages}
+    \framesubtitle{version 2.6+}
+
+    To install a package that you do not have, use \texttt{pip},
+    which is the Python package manager.
+
+    \vfill
+
+    such as
+
+    \texttt{\$ pip install seaborn}
+
+\end{frame}
+
+\begin{frame}\frametitle{Python 3}
+
+    Python 3 has been around for a while and is slowly gaining traction.
+
+    However, many people still use Python 2, so we will stick with that.
+
+    Differences are not too big, so you can easily switch.
+
+\end{frame}
+
+\begin{frame}\frametitle{Cloud9 demo}
+
+    Please log into your Cloud9 account on c9.io
+
+    \vfill
+
+    Clone the code using:
+    \texttt{\$ git clone https://github.com/schmit/hangman.git}
+
+    \vfill
+
+    If you don't have git and want a local copy, download the code using
+    \url{https://github.com/schmit/hangman/archive/master.zip}
+
+\end{frame}
+
+\begin{frame}\frametitle{How to use Python}
+    \framesubtitle{}
+
+    There are two ways to use Python:
+
+    \vfill
+
+    command-line mode: talk directly to the interpreter
+
+    \vfill
+
+    scripting-mode: write code in a file (called script) and run code by typing\\
+    \begin{center}
+        \texttt{\$ python scriptname.py}
+    \end{center}
+    in the terminal.
+    \vfill
+    The latter is what we will focus on in this course, though using the command-line
+    can be useful to quickly check functionality.
+\end{frame}
+
+
+\begin{frame}\frametitle{The interpreter}
+    \framesubtitle{Using Python as your calculator}
+
+    We can start the intepreter by typing `python' in the terminal.
+
+    \vfill
+
+    Now we can interactively give instructions to the computer, using the Python language.
+
+    \vfill
+
+    \begin{figure}
+        \centering
+        \centering
+        \includegraphics[height=2.0in]{"img/python_terminal"}
+        \label{fig:terminal}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}\frametitle{Scripting mode}
+    \framesubtitle{}
+
+    A more conveniened way to interact with Python is to write a script.
+
+    \vfill
+
+    A script contains all code you want to execute. Then you call Python on
+    the script to run the script.
+
+    \vfill
+
+    First browse, using the terminal, to where the script is saved
+
+    \vfill
+
+    Then call \texttt{python scriptname.py}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Scripting mode}
+    \framesubtitle{An example}
+
+    Suppose the Python script is saved in a folder \texttt{~/Documents/Python}
+    called \texttt{firstscript.py}.
+
+    \vfill
+
+    Then browse to the folder by entering the following command into the terminal
+
+    \vfill
+
+    \verb|$ cd ~/Documents/Python|
+
+    \vfill
+
+    And then run the script by entering
+
+    \vfill
+
+    \verb|$ python firstscript.py|
+
+\end{frame}
+
+\begin{frame}\frametitle{Print statement}
+    \framesubtitle{}
+
+    We can print output to screen using the \texttt{print} command
+
+    \codeblock{code/basics_hello.py}
+
+\end{frame}
+
+% section basics (end)
+
+\section{Variables} % (fold)
+\label{sec:variables}
+
+\begin{frame}\frametitle{Values}
+    \framesubtitle{}
+
+    A value is the fundamental thing that a program manipulates.
+
+    \vfill
+
+    Values can be ``Hello, world!'', \texttt{42}, \texttt{12.34}, \texttt{True}
+
+    \vfill
+
+    Values have types\ldots
+
+\end{frame}
+
+\begin{frame}\frametitle{Types}
+    \framesubtitle{}
+
+\begin{description}
+    \item[\textbf{Bool}ean] True/False
+    \item[\textbf{Str}ing] ``Hello, world!''
+    \item[\textbf{Int}eger] 92
+    \item[\textbf{Float}] 3.1415
+\end{description}
+
+\vfill
+
+Use \texttt{type} to find out the type of a variable, as in
+
+\texttt{>>> type("Hello, world!")}\\
+\texttt{<type `str'>}
+
+\end{frame}
+
+\begin{frame}\frametitle{Variables}
+    \framesubtitle{}
+
+    One of the most basic and powerful concepts is that of a \emph{variable}.
+
+    \vfill
+
+    A variable \emph{assigns} a name to a value.
+
+    \codeblock{code/basics_var.py}
+
+    Try it!
+
+\end{frame}
+
+\begin{frame}\frametitle{Variables}
+    \framesubtitle{}
+
+    Almost always preferred to use variables over values:
+
+    \begin{itemize}
+        \item Easier to update code
+        \item Easier to understand code (useful naming)
+    \end{itemize}
+
+    \vfill
+    What does the following code do:\\
+    \texttt{print 4.2 * 3.5}
+
+    \pause
+
+    \codeblock{code/basics_var2.py}
+
+\end{frame}
+
+% \begin{frame}\frametitle{Naming}
+%     \framesubtitle{}
+
+%     \begin{itemize}
+%         \item Choose meaningful variable names
+%         \item Should start with a letter
+%         \item Cannot use keywords
+%     \end{itemize}
+
+%     \vfill
+
+%     Use the Google Python style guide!\footnote{See References on course website.}
+
+% \end{frame}
+
+
+\begin{frame}\frametitle{Keywords}
+    \framesubtitle{}
+
+    Not allowed to use keywords, they define structure and rules of a language.
+
+    Python has 29 keywords, they include:
+
+    \begin{itemize}
+        \item and
+        \item def
+        \item for
+        \item return
+        \item is
+        \item in
+        \item class
+    \end{itemize}
+
+
+\end{frame}
+
+% \begin{frame}\frametitle{Statements, expressions and operators}
+%     \framesubtitle{}
+
+%     A statement is an instruction that Python can execute, such as
+
+%     \texttt{x = 3}
+
+%     \vfill
+
+%     \emph{Operators} are special symbols that represent computations, like addition,
+%     the values they \emph{operate} on are called operands
+
+%     \vfill
+
+%     An \emph{expression} is a combination of values, variable and operators
+
+%     \texttt{x + 3}
+
+% \end{frame}
+
+\begin{frame}\frametitle{Integers}
+    \framesubtitle{1, 2, -32, 45}
+
+    Operators for integers
+
+    \texttt{+ - * / \% **}
+
+    \vfill
+
+    Note: / uses integer division:
+
+    \texttt{5 / 2} yields \texttt{2}
+
+    \vfill
+
+    But, if one of the operands is a float, the return value is a float:
+
+    \texttt{5 / 2.0} yields \texttt{2.5}
+
+    \vfill
+
+    Note: Python automatically uses long integers for very large integers.
+
+\end{frame}
+
+\begin{frame}\frametitle{Floats}
+    \framesubtitle{1.23, 6.43, 42.0}
+
+    A floating point number approximates a real number.
+
+    Note: only finite precision, and finite range (overflow)!
+
+    Operators for floats
+
+    \begin{description}
+        \item[+] addition
+        \item[-] subtraction
+        \item[*] multiplication
+        \item[/] division
+        \item[**] power
+    \end{description}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Booleans}
+    \framesubtitle{True, False}
+
+    \textbf{Boolean expressions}:
+
+    \begin{description}
+        \item[$==$] equals: \texttt{5 == 5} yields \texttt{True}
+        \item[$!=$] does not equal: \texttt{5 != 5} yields \texttt{False}
+        \item[$>$] greater than: \texttt{5 > 4} yields \texttt{True}
+        \item[$>=$] greater than or equal: \texttt{5 >= 5} yields \texttt{True}
+    \end{description}
+
+    Similarly, we have $<$ and $<=$.
+
+    \pause\vfill
+
+    \textbf{Logical operators}:
+    \begin{description}
+        \item \texttt{True and False} yields \texttt{False}
+        \item \texttt{True or False} yields \texttt{True}
+        \item \texttt{not True} yields \texttt{False}
+    \end{description}
+
+\end{frame}
+
+\begin{frame}\frametitle{Modules}
+    \framesubtitle{}
+
+    Not all functionality avaible comes automatically when starting python, and
+    with good reasons.
+
+    \vfill
+
+    We can add extra functionality by importing modules:
+
+    \vfill
+
+    \texttt{>>> import math}\\
+    \texttt{>>> math.pi}\\
+    \texttt{3.141592653589793}
+
+    \vfill
+
+    Useful modules: \texttt{math}, \texttt{string}, \texttt{random}, and as we will see later
+    \texttt{numpy}, \texttt{scipy} and \texttt{matplotlib}.
+
+    \vfill
+
+    More on modules later!
+
+\end{frame}
+
+% \begin{frame}\frametitle{Final words}
+%     \framesubtitle{}
+
+%     No need to remember the details: everything is well documented online!
+
+%     \vfill
+
+%     However, knowing about the tools that exist will help you look them up!
+
+%     \vfill
+
+%     Always try the Python documentation first if you forgot something.
+
+
+% \end{frame}
+
+% section variables (end)
+
+% \section{What is a variable?}
+% \begin{frame}
+% \frametitle{Basic variables}
+
+% A variable stores information
+
+% \vspace{0.2in}
+
+% In Python this is simple:
+
+% \codeblock{code/basic_vars1.py}
+
+% \textcolor{comment-color}{\#} signifies the start of a comment in Python.  The comment terminates at the end of the line.
+
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Basic variables}
+
+% Variables can change (they are \emph{variable})
+
+% \codeblock{code/basic_vars2.py}
+
+
+% (no more knowledge of 1.343, 2, or 14)
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Types}
+% Unlike C/C++ and Java, variables can change types. Python keeps track of the type internally.
+
+% \codeblock{code/basic_vars3.py}
+
+% If you have PL theory background: Python is strongly typed but not statically typed
+
+% \end{frame}
+
+
+% \section{Arithmetic and boolean operators}
+
+% \begin{frame}
+% \frametitle{Arithmetic operators}
+
+% \codeblock{code/arith_ops1.py}
+
+
+% Python supports this arithmetic on strings.  (Note: Matlab does not.)
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Arithmetic operators}
+
+% Shorthand to combine assignment and addition statements:
+
+% \codeblock{code/arith_ops2.py}
+
+
+% \vspace{0.1in}
+
+% \texttt{x} is now \texttt{6} and \texttt{y} is now \textcolor{string-color}{\texttt{'hihihihi'}}
+
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Comparison operators}
+
+% \codeblock{code/comp_ops1.py}
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Boolean operations}
+
+% \codeblock{code/bool_ops1.py}
+
+
+% Python conveniently uses the keywords \textcolor{teal}{and}, \textcolor{teal}{or}, \textcolor{teal}{not} instead of the symbols \textcolor{teal}{\&\&}, $\textcolor{teal}{||}$, \textcolor{teal}{!}
+
+% \end{frame}
+
+% \section{Control Flow}
+% \begin{frame}
+% \frametitle{if}
+% The \texttt{if} statement is the most basic way to control the direction and flow of a program
+
+% \codeblock{code/if1.py}
+
+
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{if/else}
+% \texttt{if} is often accompanied by \texttt{else} to specify a second path for the code if the \texttt{if} statement is false
+
+% \codeblock{code/if2.py}
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Evaluating numerical values}
+
+% As boolean values, the numerical value 0 is False and all other numerical values are True (1, 4.33, -12, ...).
+
+% \codeblock{code/bool_ops2.py}
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{while}
+% The \texttt{while} loop repeatedly executes a task while a condition is true
+
+% \codeblock{code/while1.py}
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{while}
+
+% \codeblock{code/while2.py}
+
+% What is this code doing?
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{for}
+% The \texttt{for} loop also repeatedly executes a task
+
+% \vspace{0.1in}
+
+% Typically, \texttt{for} provides more structure:
+
+% \vspace{0.1in}
+
+% \centering
+% for ($i = 0$; $i < n$; $i = i + 1$)
+
+% \end{frame}
+
+% %\begin{frame}
+% %\frametitle{for}
+
+% %\begin{figure}[h!]
+% %\centering
+% %\includegraphics[height=1.5in]{"images/for"}
+% %\caption{}
+% %\label{}
+% %\end{figure}
+% %\end{frame}
+
+% \begin{frame}
+% \frametitle{Python for}
+% \begin{itemize}
+% \setlength{\itemsep}{0.2in}
+% \item{Python uses \texttt{for} differently than Matlab, C++, ...}
+% \item{\texttt{for} is used to iterate over elements in an ``object"}
+% \item{This is one reason why Python is easy and powerful}
+% \item{More next lecture on how you can iterate over a ``object"}
+% \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Python for}
+
+% \codeblock{code/for1.py}
+
+% \vspace{0.5in}
+
+% more next lecture...
+
+% \end{frame}

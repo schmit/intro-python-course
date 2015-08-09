@@ -1,0 +1,44 @@
+\section{Scipy} % (fold)
+\label{sec:scipy}
+\begin{questions}
+\titledquestion{Least squares} % (fold)
+\label{sub:least_squares}
+
+Generate matrix $A \in R^{m \times n}$ with $m > n$.
+Also generate some vector $b \in R^m$.
+
+Now find $x = \arg\min_x \|Ax-b\|_2$.
+
+Print the norm of the residual.
+
+% titledquestion least_squares (end)
+
+\titledquestion{Optimization} % (fold)
+\label{sub:optimization}
+
+Find the maximum of the function
+\[
+    f(x) = \sin^2(x-2)e^{-x^2}
+\]
+
+% titledquestion optimization (end)
+
+
+\titledquestion{Pairwise distances} % (fold)
+\label{sub:pairwise_dists}
+
+Let $X$ be a matrix with $n$ rows and $m$ columns.
+How can you compute the pairwise distances between every two rows?
+
+As an example application, consider $n$ cities, and we are given their coordinates
+in two columns.
+Now we want a nice table that tells us for each two cities, how far they
+are apart.
+
+Again, make sure you make use of Scipy's functionality instead of writing your own routine.
+
+% titledquestion pairwise_dists (end)
+
+\end{questions}
+
+% section scipy (end)

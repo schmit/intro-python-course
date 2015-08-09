@@ -1,0 +1,109 @@
+\documentclass[
+    smaller,
+    %handout,
+]{beamer}
+
+% \usepackage{caption}
+% \usepackage{subcaption}
+\usepackage{cme193}
+
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{}
+
+\usetheme{Boyd}
+
+% \definecolor{sandstone}{rgb}{248,246,234}
+% \setbeamercolor{background canvas}{bg=sandstone}
+
+
+% \AtBeginSection[]
+% {
+%   \begin{frame}<beamer>
+%     %\frametitle{\thesection}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+
+\newcommand{\lecturenr}{8}
+\newcommand{\lecturetitle}{Unit testing, more modules, wrap up}
+
+\newcounter{lectnum}        % Lecture counter
+\setcounter{lectnum}{\lecturenr}    % lecture counter
+
+\title{CME 193: Introduction to Scientific Python \\
+Lecture \lecturenr: \lecturetitle}
+\author{Sven Schmit}
+\date{\url{stanford.edu/~schmit/cme193}}
+\begin{document}
+
+\maketitle
+
+%% select content here !
+%% lecture 1
+% \input{tex/administrivia}
+%% add intro on how to use terminal / cmd prompt
+% \input{tex/intro}
+% \input{tex/basics}
+% \input{tex/control}
+
+%% lecture 2
+% \input{tex/project}
+% \input{tex/functions}
+% \input{tex/lists}
+
+%% lecture 3
+% \input{tex/tuples}
+% \input{tex/dict}
+% \input{tex/sets}
+% \input{tex/string}
+% \input{tex/modules}
+
+%% lecture 4
+% \input{tex/fileio}
+% \input{tex/classes}
+
+%% lecture 5
+% \input{tex/secondpart}
+% \input{tex/numpy}
+% \input{tex/scipy}
+% \input{tex/matplotlib}
+
+
+%% lecture 6:
+% Notebooks
+% Pandas
+% Statsmodels
+% Using iPython Notebook
+
+%% lecture 7:
+% \input{tex/recursion}
+% \input{tex/exception}
+% \input{tex/iterators} % leave out
+
+%% lecture 8: wrap up
+\input{tex/unittest}
+\input{tex/moremodules}
+\input{tex/wrapup}
+
+%% Special slides
+% \input{tex/exsol_control}
+
+\section{Exercises}
+
+\begin{frame}\frametitle{Exercises}
+    \framesubtitle{}
+
+    See course website for exercises for this week.
+
+    \vfill
+
+    Let me know if you have any question about exercises or project
+
+    \vfill
+
+    Feel free to email me with questions about project
+
+\end{frame}
+
+\end{document}

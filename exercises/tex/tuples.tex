@@ -1,0 +1,49 @@
+\section{Tuples} % (fold)
+\label{sec:tuples}
+\begin{questions}
+\titledquestion{Swapping two values} % (fold)
+\label{sub:swapping_two_values}
+
+Suppose you have two variables: \texttt{a} and \texttt{b}.
+Now you want to set \texttt{a} equal to the value of \texttt{b} and at
+ the same time set \texttt{b} equal to the value of \texttt{a}.
+
+The following obviously does not work
+\begin{verbatim}
+    a = b
+    b = a
+\end{verbatim}
+so in some languages, you need to define a third variable like this
+\begin{verbatim}
+    t = a
+    a = b
+    b = t
+\end{verbatim}
+However, in Python you don't need to do this. How can you swap \texttt{a} and
+\texttt{b} in one line?
+
+% titledquestion swapping_two_values (end)
+
+\titledquestion{Zip} % (fold)
+\label{sub:zip}
+
+Suppose we have two lists, \texttt{x} and \texttt{y} that give the $x$ and $y$
+coordinates of a set of points. Create a list with the coordinates (x,y) as a tuple.
+Hint: Find out about the \texttt{zip} function.
+
+You have decided that actually, you need the two seperate lists, but unfortunately,
+you have thrown them away.
+How can we use zip to \emph{unzip} the list of tuples to get two lists again?
+
+% titledquestion zip (end)
+
+\titledquestion{Distances} % (fold)
+\label{sub:zip}
+
+Suppose we have two vectors, \texttt{x} and \texttt{y}, stored as tuples with $n$ elements.
+Implement functions that compute the $l_1$ and $l_2$ distances between \texttt{x} and \texttt{y}.
+Note that $n$ is not explicitly given.
+
+% titledquestion distances (end)
+\end{questions}
+% section tuples (end)

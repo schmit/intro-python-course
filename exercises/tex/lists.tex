@@ -1,0 +1,158 @@
+\section{Lists} % (fold)
+\label{sec:lists}
+
+% This sheet is a little long
+
+\begin{questions}
+
+
+
+\titledquestion{Short questions} % (fold)
+\label{sub:short_questions}
+
+\begin{parts}
+    \part Write a function that prints the elements of a list
+    \part Write a function that prints the elements of a list in reverse
+    \part Write your own implementation of the \verb|len| function
+    that returns the number of elements in a list.
+\end{parts}
+% titledquestion short_questions (end)
+
+\titledquestion{Copying lists} % (fold)
+\label{sub:copying_lists}
+
+\begin{parts}
+    \part Create a list \verb|a| with some entries.
+    \part Now set \verb|b = a|
+    \part Change \verb|b[1]|
+    \part What happened to \verb|a|?
+    \part Now set \verb|c = a[:]|
+    \part Change \verb|c[2]|
+    \part What happened to \verb|a|?
+\end{parts}
+
+Now create a function \verb|set_first_elem_to_zero(l)| that takes a list, sets its
+first entry to zero, and returns the list.
+
+What happens to the original list?
+
+\titledquestion{Lists of lists}
+
+What is the difference between \texttt{a} and \texttt{b}:
+
+\verb|a = [[]] * 3|
+
+\verb|b = [[] for _ in xrange(3)]|
+
+% titledquestion copying_lists (end)
+
+\titledquestion{Lists and functions} % (fold)
+\label{sub:lists_and_functions}
+
+Write a function that takes a list and an index, and sets the value of the list
+at the given index to 0.
+
+% titledquestion lists_and_functions (end)
+
+\titledquestion{Primes} % (fold)
+\label{sub:primes}
+
+In Section~\ref{sec:functions} you wrote a function that prints all primes up to $n$, and
+a function that prints the first $n$ primes.
+Update these functions such that they return lists instead.
+
+% titledquestion primes (end)
+
+\titledquestion{List comprehensions} % (fold)
+\label{sub:list_comprehensions}
+
+Let $i, j = 1,\ldots, n$
+
+\begin{parts}
+    \part Generate a list with elements \verb|[i,j]|.
+    \part Generate a list with elements \verb|[i,j]| with $i < j$
+    \part Generate a list with elements \verb|i + j| with both $i$ and $j$ prime and $i > j$.
+    \part Write a function that evaluates an arbitrary polynomial $a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n$
+    using a list comprehension, where you are given \verb|x| and a list with coefficients \verb|coefs|
+    (hint: use enumerate)
+\end{parts}
+
+% titledquestion list_comprehensions (end)
+
+\titledquestion{Filter} % (fold)
+\label{sub:filter}
+
+In lecture we have seen how to implement \texttt{map} using list comprehensions.
+Implement \texttt{filter} using list comprehensions.
+Name your functions \texttt{myfilter} so you can compare with Python's standard filter.
+% titledquestion filter (end)
+
+\titledquestion{Flatten a list of lists} % (fold)
+\label{sub:flatten_a_list_of_lists}
+
+Consider having a list with lists as elements, e.g.
+\texttt{[[1,3], [3,6]]}.
+
+Write a function that takes such a list, and returns a list with as elements the
+elements of the sublists, e.g. \texttt{[1, 3, 3, 6]}.
+
+% titledquestion flatten_a_list_of_lists (end)
+
+\titledquestion{Finding the longest word} % (fold)
+\label{sub:finding_longest_word}
+
+Write a function that returns the longest word in a variable \texttt{text}
+that contains a sentence.
+While \texttt{text} may contain punctuation, these should not be taken into account.
+What happens with ties?
+
+As an example, consider: ``Hello, how was the football match earlier today???''
+
+% titledquestion finding_longest_word (end)
+
+\titledquestion{Collatz sequence, part 2} % (fold)
+\label{sub:collatz_sequence_part_2}
+
+Recall the Collatz sequence problem from Section~\ref{sub:collatz_sequence}.
+Our goal is to find the number $n < 1,000,000$ that leads to the longest Collatz sequence.
+
+\begin{parts}
+    \part Write a function that for any $n$, returns its Collatz sequence as a list
+    \part Write a function that finds the integer $x$ that leads to the longest
+    Collatz sequence with $x < n$.
+\end{parts}
+
+% titledquestion collatz_sequence_part_2 (end)
+
+\titledquestion{Pivots}
+\label{sub:sorting}
+
+Write a function that takes a value \texttt{x} and a list \texttt{ys},
+and returns a list that contains the value \texttt{x} and all elements of \texttt{ys}
+such that all values \texttt{y} in \texttt{ys} that are smaller than \texttt{x}
+come first, then we element \texttt{x} and then the rest of the values in \texttt{ys}
+
+For example, the output of
+\texttt{f(3, [6, 4, 1, 7])} should be \texttt{[1, 3, 6, 4, 7]}
+
+% titledquestion sorting (end)
+
+\titledquestion{Prime challenge}
+\label{sub:prime_challenge}
+
+Write the function \texttt{primes(n)} that return a list with all prime numbers
+up to \texttt{n} using three (or less) lines of code.
+
+Hint 1: Use lambda functions and list comprehensions.
+
+Hint 2: Use the first two lines to define two helper (lambda) functions.
+
+% factors = lambda n: [x for x in xrange(1, n+1) if n % x == 0]
+% prime = lambda n: factors(n) == [1, n]
+% primes = lambda n: [x for x in xrange(2, n+1) if prime(x)]
+
+
+
+\end{questions}
+
+% section lists (end)

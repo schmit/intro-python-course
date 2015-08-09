@@ -1,0 +1,140 @@
+\section{Recursion} % (fold)
+\label{sec:recursion}
+
+\begin{questions}
+\titledquestion{Power} % (fold)
+\label{sub:power}
+
+Write a recursive function that computes $a^b$ for given $a$ and $b$, where
+$b$ is an integer. Do not use \texttt{**}.
+
+% titledquestion power (end)
+
+\titledquestion{Recursive map and filter} % (fold)
+\label{sub:recursive_map}
+
+Write a recursive functions \texttt{myrecmap} and \texttt{myrecfilter}
+that implement the \texttt{map} and \texttt{filter} functions using recursion.
+
+% titledquestion Recursive map (end)
+
+\titledquestion{Purify}
+\label{sub:purify}
+
+Write two functions, one that uses iteration (say a for loop), and the other using recursion, that achieve the following:
+The input of the function is a list with integers. The functions return a (new) list with only the even integers in the list.
+
+\titledquestion{Product}
+\label{sub:product}
+
+Write two functions, one that uses iteration, and the other using recursion, that achieve the following:
+The input of the function is a list with numbers. The functions return the product of the numbers in the list.
+
+
+\titledquestion{Factorial} % (fold)
+\label{sub:factorial}
+
+Write a recursive function to compute $n! = n \times (n-1) \times \ldots \times 1$.
+Note that $0!$ is defined to equal $1$.
+
+% titledquestion factorial (end)
+
+\titledquestion{Recursive root finding} % (fold)
+\label{sub:rec_root_finding}
+
+In Exercise~\ref{sec:functions}.\ref{sub:root_finding} you wrote a function to find a root of a function $f$.
+Now write a recursive function that finds the root of a function.
+
+% titledquestion rec_root_finding (end)
+
+\titledquestion{Collatz sequence} % (fold)
+\label{sub:collatz_sequence}
+
+Write a recursive implementation of a function that returns a list with
+the Collatz sequence started at an arbitrary starting value.
+
+Recall:
+A Collatz sequence is formed as follows:
+We start with some number $x_0$, and we find the next number in the sequence by
+\[
+    x_{i+1} = \begin{cases}
+        x_i / 2 & \text{ if $x_i$ is even}\\
+        3x_i + 1 & \text{ if $x_i$ is odd}
+    \end{cases}
+\]
+If $x_i = 1$, we stop iterating and have found the full sequence.
+
+% titledquestion collatz_sequence (end)
+
+\titledquestion{Fibonacci sequence} % (fold)
+\label{sub:fibonacci_sequence}
+
+The Fibonacci sequence $\{F_i\}_i=0^\infty$ starts with $F_0=0, F_1=1$.
+Every subsequent value in the sequence is the sum of the last elements in the
+sequence:
+\[
+    F_{n} = F_{n-1} + F_{n-2}
+\]
+
+\begin{parts}
+    \part Implement a non-recursive function that computes the $F_n$
+    \part Implement a recursive function that computes $F_n$
+    \part Compare the runtime for computing $F_{35}$ recursively versus
+    non-recursively, and explain the difference.
+    \part This does not mean a recursion is not feasible for this problem, only
+    that the naive implementation isn't the best. We can get a better version
+    using either of the following
+    \begin{parts}
+        \part Store values already calculated, say in a dictionary, so you can look them up instead of redoing the calculation.
+        \part Generalizing the Fibonacci sequence to an additive
+        sequence with arbitrary starting points $t_0$ and $t_1$, and finding
+        a recursive algorithm to find the $n$th term in such a sequence.
+        Note that finding the $n$th term in a sequence started from $t_0$ and $t_1$
+        is the same as finding the $n-1$th term in a sequence started from $t_1$ and $t_0 + t_1$.
+    \end{parts}
+    Implement one of the above (or both).
+
+\end{parts}
+
+% titledquestion fibonacci_sequence (end)
+
+\titledquestion{Palindromes} % (fold)
+\label{sub:palindromes}
+
+Given a string \texttt{t}, we are interested in finding the largest palindrome in \texttt{t},
+where we are allowed to remove characters from \texttt{t}.
+For example, consider the string \texttt{abcdba}, then the function should return \texttt{abcba}. Before you start coding, figure out the recursion on paper first.
+
+Extra: you will notice that if you are not careful, this will take a very long time to compute for longer inputs. However, a simple modification can speed up your code so that it runs in $\mathcal{O}(n^2)$, where $n$ is the length of the input string. Find and implement this modification.\footnote{This exercise is inspired by an exercise in cs221.}
+
+% titledquestion palindromes (end)
+
+\titledquestion{Quicksort} % (fold)
+\label{sub:quicksort}
+
+There are many sorting algorithms, see for example \url{http://www.sorting-algorithms.com/}.
+Quicksort is a well known (and quick) sorting algorithm that works as follows:
+
+\begin{parts}
+    \part Test whether the list is sorted, if not:
+    \part Select one part of the list as \emph{pivot}, any element works.
+    \part Create a new list, \texttt{left} and \texttt{right}, and put all
+        elements smaller than the pivot in the \texttt{left} list, and all
+        elements larger than the pivot in the \texttt{right} list.
+    \part Recursively sort the left and right list, and return
+        \texttt{sorted left + pivot + sorted right}.
+\end{parts}
+
+Implement the quicksort algorithm. However, first think about the following caveats
+and how to get around them:
+\begin{parts}
+    \part Testing whether a list is sorted takes quite a bit of work, so we
+        do not want to do this. Instead, we want to perform a much simpler check:
+        what list is trivially sorted?
+    \part What happens when the pivot element occurs multiple times in the list?
+        How can we get around this?
+\end{parts}
+
+% titledquestion quicksort (end)
+\end{questions}
+% section recursion (end)

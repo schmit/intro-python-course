@@ -1,0 +1,17 @@
+# jemdoc: menu{MENU}{lectures.html}
+= CME 193 - Introduction to Scientific Python
+
+== Lectures
+
+. [lec/lec1.pdf Introduction]
+. [lec/lec2.pdf Functions and lists]
+. [lec/lec3.pdf Tuples, sets, dictionaries, strings]
+. [lec/lec4.pdf File IO, Classes] - ([http://goo.gl/forms/NBkBXWgnCC Feedback form])
+. [lec/lec5.pdf Numpy, Scipy, Matplotlib]
+. [http://goo.gl/QSGNxe IPython notebooks, Pandas, Statsmodels]
+. [lec/lec7.pdf Recursion, exception handling]
+. [lec/lec8.pdf Unit testing, more modules, wrap up] - ([http://goo.gl/3onaCL Evaluation form])
+
+
+Disclaimer: these lecture slides are subject to change and can be updated any time.
+Please check regularly.

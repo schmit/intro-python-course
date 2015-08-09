@@ -1,0 +1,108 @@
+\section{Modules} % (fold)
+\label{sec:modules}
+
+\begin{frame}[fragile]\frametitle{Importing a module}
+    \framesubtitle{}
+
+    We can import a module by using \texttt{import}
+
+    \vfill
+
+    E.g. \texttt{import math}
+
+    \vfill
+
+    We can then access everything in \texttt{math}, for example the square root
+    function, by:
+
+    \vfill
+
+    \texttt{math.sqrt(2)}
+
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Importing as}
+    \framesubtitle{}
+
+    We can rename imported modules
+
+    \vfill
+
+    E.g. \texttt{import math as m}
+
+    \vfill
+
+    Now we can write \texttt{m.sqrt(2)}
+
+\end{frame}
+
+\begin{frame}\frametitle{In case we only need some part of a module}
+    \framesubtitle{}
+
+    We can import only what we need using the \texttt{from ... import ...} syntax.
+
+    \vfill
+
+    E.g. \texttt{from math import sqrt}
+
+    \vfill
+
+    Now we can use \texttt{sqrt(2)} directly.
+
+\end{frame}
+
+\begin{frame}\frametitle{Import all from module}
+    \framesubtitle{}
+
+    To import all functions, we can use \texttt{*}:
+
+    \vfill
+
+    E.g. \texttt{from math import *}
+
+    \vfill
+
+    Again, we can use \texttt{sqrt(2)} directly.
+
+    \vfill
+
+    Note that this is considered bad practice!
+    It makes it hard to understand where functions come from and what if several modules come with functions with same name.
+
+\end{frame}
+
+\begin{frame}\frametitle{Writing your own modules}
+    \framesubtitle{}
+
+    It is perfectly fine to write and use your own modules. Simply
+    import the name of the file you want to use as module.
+
+    \vfill
+
+    E.g.
+
+    \codeblock{code/modules_first.py}
+
+    \texttt{import firstmodule}\\
+    \texttt{firstmodule.helloworld()}
+
+    \vfill
+
+    What do you notice?
+
+\end{frame}
+
+\begin{frame}\frametitle{Only running code when main file}
+    \framesubtitle{}
+
+    By default, Python executes all code in a module when we import it.
+    However, we can make code run only when the file is the main file:
+
+    \codeblock{code/modules_second.py}
+
+    Try it!
+
+\end{frame}
+
+% section modules (end)

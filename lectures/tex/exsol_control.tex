@@ -1,0 +1,60 @@
+\section{Exercise solutions: control flow} % (fold)
+\label{sec:exercise_solutions_control_flow}
+
+\begin{frame}\frametitle{For loops}
+    \framesubtitle{Problem}
+
+    Print the numbers 1 to 100 that are divisible by 5 but not by 3
+
+\end{frame}
+
+\begin{frame}\frametitle{For loops}
+    \framesubtitle{Solution}
+
+    \codeblock{code/exsol_control_for.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{While loops}
+    \framesubtitle{Exercise}
+
+    The smallest number that is divisible by 2, 3 and 4 is 12.
+    Find the smallest number that is divisible by all integers between 1 and 10.
+
+\end{frame}
+
+\begin{frame}\frametitle{While loop}
+    \framesubtitle{Solution}
+
+    \codeblock{code/exsol_control_while.py}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Collatz sequence}
+    \framesubtitle{Problem}
+
+    A Collatz sequence is formed as follows:
+    We start with some number $x_0$, and we find the next number in the sequence by
+    \[
+        x_{i+1} = \begin{cases}
+            x_i / 2 & \text{ if $x_i$ is even}\\
+            3x_i + 1 & \text{ if $x_i$ is odd}
+        \end{cases}
+    \]
+    If $x_i = 1$, we stop iterating and have found the full sequence.
+
+    It is conjectured, though not proven, that every chain eventually ends at $1$.
+
+    Print the Collatz sequence starting at $x_0 = 103$.
+
+\end{frame}
+
+\begin{frame}\frametitle{Collatz sequence}
+    \framesubtitle{Solution}
+
+    \codeblock{code/exsol_control_collatz.py}
+
+\end{frame}
+
+% section exercise_solutions_control_flow (end)

@@ -1,0 +1,396 @@
+\section{Functions} % (fold)
+\label{sec:functions}
+
+\begin{frame}\frametitle{Simple example}
+    \framesubtitle{}
+
+    \emph{Example:} Suppose we want to find the circumference of a circle with radius
+    2.5. We could write
+
+    \codeblock{code/functions_radius0.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Functions}
+
+    Functions are used to abstract components of a program.
+
+    \vfill
+
+    Much like a mathematical function, they take some input and then do something
+    to find the result.
+
+\end{frame}
+
+\begin{frame}\frametitle{Functions: def}
+    \framesubtitle{A closer look}
+
+    Start a function definition with the keyword \texttt{def}
+
+    \vfill
+
+    Then comes the function name, with arguments in braces, and then a colon\pause
+
+    \begin{center}
+        \texttt{def func(arg1, arg2):}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}\frametitle{Functions: body}
+
+    Then comes, indented, the body of the function
+
+    \vfill\pause
+
+    Use \texttt{return} to specify the output
+
+    \begin{center}
+        \texttt{return result}
+    \end{center}
+
+    \codeblock{code/functions_radius2.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Return}
+
+    By default, Python returns None
+
+    \vfill
+
+    Once Python hits \texttt{return}, it will return the output and jump out of
+    the function
+
+    \pause
+
+    \codeblock{code/functions_return.py}
+
+    What does this function do?
+
+\end{frame}
+
+\begin{frame}\frametitle{How to call a function}
+    \framesubtitle{}
+    % to update
+
+    Calling a function is simple (i.e. run/execute):
+
+    \texttt{>>> func(2.3, 4)}
+
+\end{frame}
+
+\begin{frame}\frametitle{Quick question}
+
+    What is the difference between \texttt{print} and \texttt{return}?
+
+\end{frame}
+
+\begin{frame}\frametitle{Exercise}
+    \framesubtitle{Write your first function}
+
+    \begin{enumerate}
+         \item Write a function that prints `Hello, world!'
+         \item Write a function that returns `Hello, \texttt{name}!', where \texttt{name}
+         is a variable
+     \end{enumerate}
+
+\end{frame}
+
+\begin{frame}\frametitle{Exercise solution}
+    \framesubtitle{Write your first function}
+
+    \codeblock{code/functions_ex_first.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Everything is an object}
+
+    Everything is Python is an object, which means we can pass functions:
+
+    \vfill
+
+    \codeblock{code/functions_double.py}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Scope}
+    \framesubtitle{}
+
+    Variables defined within a function (local), are only accessible within the function.
+
+    \vfill
+
+    \codeblock{code/functions_scope.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Functions within functions}
+    \framesubtitle{}
+
+    It is also possible to define functions within functions, just as we
+    can define variables within functions.
+
+    \codeblock{code/functions_within.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Global keyword}
+    \framesubtitle{}
+
+    We could (but should not) change global variables within a function
+
+    \codeblock{code/functions_global.py}
+
+   Question: What is the difference between the last two functions?
+
+\end{frame}
+
+\begin{frame}\frametitle{Scope questions}
+
+    \codeblock{code/functions_scope_q.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Default arguments}
+    \framesubtitle{}
+
+    It is sometimes convenient to have default arguments
+
+    \codeblock{code/functions_default_args.py}
+
+    The default value is used if the user doesn't supply a value.
+
+\end{frame}
+
+\begin{frame}\frametitle{More on default arguments}
+    \framesubtitle{}
+
+    Consider the function prototype: \texttt{func(x, a=1, b=2)}
+
+    Suppose we want to use the default value for a, but change b:
+
+    \codeblock{code/functions_default_args2.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Docstring}
+    \framesubtitle{Documentation is important}
+
+    It is important that others, including \emph{you-in-3-months-time} are able
+    to understand what your code does.
+
+    This can be easily done using a so called `docstring', as follows:
+
+    \codeblock{code/functions_docstring.py}
+
+    \pause
+
+    We can then read the docstring from the interpreter using:
+
+    \vfill
+
+    \texttt{>>> help(nothing)}
+
+    This function doesn't do anything.
+
+\end{frame}
+
+\begin{frame}\frametitle{Question}
+    \codeblock{code/functions_docstring.py}
+    \vfill
+    Question: what does \texttt{nothing()} return?
+\end{frame}
+
+\begin{frame}\frametitle{Lambda functions}
+    \framesubtitle{A quick way to define short functions}
+
+    An alternative way to define short functions:
+
+    \codeblock{code/functions_lambda.py}
+
+    \vfill
+
+    Pros:
+    \begin{itemize}
+        \item One line / in line
+        \item No need to name a function
+    \end{itemize}
+
+    Try to use these for the homework if you can.
+
+\end{frame}
+
+% section functions (end)
+
+
+
+% \section{Functions}
+% \begin{frame}
+% \frametitle{Functions}
+% Functions are used to organize programs into coherent pieces
+
+% \vspace{0.2in}
+
+% In other words, functions are used to generalize or ``abstract" components of a program
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Root finding}
+
+% What is a limitation of this code?
+
+% \codeblock{code/while2.py}
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Root finding}
+% We do not want a $\sqrt{7}$ method, we want a $\sqrt{x}$ method
+
+% \vspace{0.2in}
+
+% We still have the same capabilities (just let $x = 7$), but now our ``abstracted" root finder can be used for more cases
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Root finding}
+
+% With this function, we can call \texttt{root(7)}
+
+% \codeblock{code/while3.py}
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Root finding}
+% More general, we can call \texttt{root(7, 0.1)}:
+
+% \codeblock{code/while4.py}
+
+
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Root finding}
+% Python makes it easy to provide default argument values:
+
+% \codeblock{code/while5.py}
+
+
+% Can call \texttt{root(3)}, \texttt{root(113, 0.01)}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Root finding}
+% A few things to think about:
+% \vspace{0.1in}
+% \begin{itemize}
+% \setlength{\itemsep}{0.1in}
+% \item{Are there cases where \texttt{root()} will have an error?}
+% \item{Are there cases where \texttt{root()} will run forever? (fail to converge)}
+% \item{How else can we generalize the function?}
+% \end{itemize}
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Basic functions}
+
+% What will happen when this code runs?
+
+% \codeblock{code/func1.py}
+
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Basic functions}
+
+% What about this code?
+
+% \codeblock{code/func2.py}
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{More function examples}
+
+% \codeblock{code/poly_eval1.py}
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{More function examples}
+
+% \codeblock{code/poly_eval2.py}
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Indentation / white space}
+
+% Python uses indentation (``white space") to group statements
+
+% \vspace{0.15in}
+
+% Each code block is indented the same amount (for loop, while loop, function definition, etc.)
+
+% \vspace{0.15in}
+
+% Python will complain if your indentation is incorrect
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{Indentation}
+
+% \codeblock{code/indent1.py}
+
+% 2-space or 4-space indentation is standard.
+
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Identation}
+
+% \codeblock{code/indent2.py}
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{White space}
+
+% Some people like this indentation structure and some people do not.
+
+% \vspace{0.2in}
+
+% ... Python isn't going to stop using it
+
+% \end{frame}
+
+
+% \begin{frame}
+% \frametitle{End}
+% \begin{itemize}
+% \setlength{\itemsep}{0.05in}
+% \item{Assignment 1 is posted on the course web site (due Tuesday 1/14)}
+% \item{In-class exercises, python codes from slides, and readings also posted}
+% \end{itemize}
+
+% Next time:
+% \begin{enumerate}
+% \setlength{\itemsep}{0.05in}
+% \item{More on Python functions}
+% \item{Strings}
+% \item{Lists}
+% \item{Dictionaries}
+% \item{Tuples}
+% \end{enumerate}
+
+% \end{frame}

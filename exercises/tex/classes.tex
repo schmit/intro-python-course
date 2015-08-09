@@ -1,0 +1,138 @@
+\section{Classes} % (fold)
+\label{sec:classes}
+\begin{questions}
+
+    \titledquestion{Rational numbers} % (fold)
+    \label{sub:rational_numbers}
+
+        In this problem, we will write a class that can represent rational numbers,
+        i.e. fractions $\frac{p}{q}$.
+
+        \begin{parts}
+            \part Create a class \texttt{Rational} which is initialized by two
+            integers, $p$ and $q$, the nominator and denominator
+            \part Add a method to print the rational number as $p/q$
+            (the \verb|__str__| or \verb|__repr__| method is useful).
+            \part We would like to represent $\frac{10}{20}$ by $\frac{1}{2}$
+            instead, hence write a function that computes the greatest common
+            divisor, and ensure that every rational number is simplified
+            \part Add a method so that we can add two rational numbers with
+            \texttt{r1 + r2}, here the \verb|__add__()| method is useful.
+            \part Add a method to subtract two rational numbers. (\verb|__sub__|)
+            \part Add a method to multiply two rational numbers. (\verb|__mul__|)
+            \part Add a method to divide two rational numbers. (\verb|__div__|)
+            \part Add a method that compares whether two rational numbers are equal.
+            \part Add a method to convert the rational number to a floating point
+            (the \verb|__float__()| method may be handy).
+            \part Add any more functionality that you think is useful but I failed
+            to mention.
+        \end{parts}
+
+    % titledquestion rational_numbers (end)
+
+    \titledquestion{Rock Paper Scissors}
+    \label{sub:rock_paper_scissors}
+
+        In this problem, we will finish an implementation for Rock-Paper-Scissors.
+        We have written some code to get you started, now it's up to you to finish the
+        implementation.
+
+        The code consists of 2 files: game.py and agent.py.
+        The code that implements the actual game is coded in game.py.
+        agent.py defines several agents that can play the game.
+        Download the starter code here using\\
+        \texttt{\$ git clone https://github.com/schmit/Rock-paper-scissors-startercode.git} (if you have git / use Cloud9)
+        or dowload the code directly:\\ \url{https://github.com/schmit/Rock-paper-scissors-startercode/archive/master.zip}
+        \begin{parts}
+            \part Finish the implementation of game.py by implementing the compare function,
+                updating the scores (where a win is 1 point, and a tie or loss 0 points),
+                and finally the summary function that gives some information after the game.
+            \part Implement the HumanAgent in agent.py, this agent should query the user
+                for the next move, and ensure that the user gives valid input.
+            \part Implement MyAgent, where you can implement your own strategy,
+                try to beat the InstructorAgent consistently over 100 rounds.
+        \end{parts}
+
+        Hint: have a look at the Hangman code.
+
+    \titledquestion{Hangman agent}
+    \label{sub:hangman_agent}
+
+    Implement your own Hangman computer agent (see exercise~\ref{sec:control_flow}.\ref{sub:hangman_1})
+    that is much more effective than the Agent that guesses random characters.
+
+    Make sure you create a new class rather than overwriting the existing \texttt{Agent}
+    class. You can of course inherit from the \texttt{Agent} class
+
+    You can update the \texttt{simulate.py} script to test your implementation.
+
+    \titledquestion{Sparse and dense vectors}
+    \label{sub:vector_class}
+    In exercise~\ref{sec:dictionaries}.\ref{sub:vector_multiply} you implemented
+    functions for sparse and dense vector multiplications using lists and dictionaries.
+    However, this is a bit clumsy to use in practice.
+    Really, we would like to represent sparse and dense vectors as classes,
+    this way we can overload operators such as \texttt{+} (\texttt{\_\_add\_\_})
+    and get sensible output.
+    For example, using \texttt{+} on two dense vectors implemented as lists would
+    append the second vector to the first, instead of adding the two together.
+
+    Implement sparse and dense vectors.
+    Both classes should have the following capabilities:
+    \begin{parts}
+        \item Print vector
+        \item Add two vectors (both if other is dense and sparse)
+        \item Multiply two vectors (both if other is dense and sparse)
+    \end{parts}
+    Do re-use your code from the previous exercise.
+
+    Hint: \texttt{isinstance()} might be useful.
+
+    \titledquestion{Implementing the set class}
+    \label{sub:set_as_dict}
+
+    Write a class \texttt{mySet} that has the same basic functionality as
+    the Python \texttt{set} data structure.
+    Base your implementation on a dictionary.
+
+    \titledquestion{Binary search tree} % (fold)
+    \label{sub:binary_search_tree}
+
+        In this exercise, we will implement a binary search tree.
+        See \url{http://en.wikipedia.org/wiki/Binary_search_tree} for
+        an explanation.
+
+        \begin{parts}
+            \part Define a class \texttt{Node}, and write the constructor, which
+            takes one argument, \texttt{value}, and initializes the left and right
+            children to None.
+            \part Write a function to print the tree.
+            \part Write a function that inserts a new value in the tree at the
+            right location.
+            \part Write a function that looks up a value in the tree.
+            \part Write a function that removes a value from the tree.
+        \end{parts}
+
+    % titledquestion binary_search_tree (end)
+
+    \titledquestion{Ordinary least squares} % (fold)
+    \label{sub:binary_search_tree}
+
+        Our goal in this exercise is to write our own least-squares solver to solve regression problems:
+        \[
+            \arg\min_{\beta} \|y - X\beta\|_2
+        \]
+        See for example statsmodels \texttt{ols} or \texttt{LinearRegression}.
+        While one can, and should, use written solvers, it's a good practice exercise.
+
+        \begin{parts}
+            \part Setup an OLS class with fit and predict methods, to be coded later
+            \part Write the fit method using numpy's or scipy's linear algebra module.
+            \part Now write the predict function, that predicts $y_n$ given new $X_n$.
+            \part Add a function that summarizes the model
+            \part (Optional) Use Patsy and Pandas to support DataFrames and formulas, similar to \texttt{R}.
+        \end{parts}
+
+    % titledquestion binary_search_tree (end)
+\end{questions}
+% section classes (end)

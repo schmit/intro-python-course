@@ -1,0 +1,77 @@
+# jemdoc: menu{MENU}{index.html}
+= CME 193 - Introduction to Scientific Python
+
+== Course description
+
+This short course runs for the first eight weeks of the quarter and is
+offered each quarter during the academic year.
+It is recommended for students who want to use Python in math, science,
+or engineering courses and for students who want to learn the basics of
+Python programming, and learn about relevant applications.
+
+The goal of the short course is to familiarize students with Python’s
+tools for scientific computing.
+Lectures will be interactive with a focus on learning by example, and
+assignments will be application-driven.
+Topics covered include control flow, basic data structures, File IO,
+and an introduction to NumPy and SciPy.
+
+== Course information
+
+CME 193 - Introduction to Scientific Python - Spring 2015
+- Location: 380-380Y
+- Times: Thursdays 3:45 PM - 5:35 PM for 8 weeks
+
+Instructor:
+[http://stanford.edu/~schmit Sven Schmit] (schmit at stanford dot edu)
+
+Office hours: by appointment and directly after class.
+
+We will be using [https://piazza.com/stanford/spring2015/cme193/home Piazza] for course communication.
+
+== Course prereqs
+
+There are no formal prerequisites.
+However, past experience has shown that people with no programming experience
+will struggle with the pace and have to put in a lot of hours, as if it were a three unit course.
+Hence, *some prior programming experience in some language is strongly encouraged*.
+
+If you have no programming experience, and you still want to take to course, please consider
+completing an introduction of Python on [http://www.codecademy.com/en/tracks/python Codeacademy]
+and/or [https://www.udacity.com/course/cs101 Udacity] before class starts.
+This should get you up to speed!
+
+== Course Policy
+
+The course consists of 8 lectures.
+Roughly the first half is a traditional lecture, and after a short
+minute break, we will spend the rest of the time working on exercises in class.
+Hence, please bring a laptop.
+
+Exercises will be assigned each class. There is no graded homework.
+At the end of the course, you should submit a *portfolio* demonstrating
+that you did the exercises assigned and a *final project*.
+For more information on the [portfolio.html portfolio] and
+the [project.html project], see the corresponding pages.
+Both are due precisely one week after the last lecture, **on May 28 at noon**.
+
+To get credit, you are judged on the combination of the portfolio and project.
+In particular, an outstanding project can make up for a somewhat lacking portfolio,
+and if your project just does not work out as expected, a great portfolio can
+make up for that.
+However, in general both should be at a satisfactory level.
+
+You are encouraged to take the class for credit, as it forces you to practice with
+Python and that's the best way to learn. However, anyone is also welcome to audit
+the class.
+
+== Honor code
+
+You are strongly encouraged to work together and discuss both exercises and
+the project.
+However, the portfolio and project should be your own work and all the code
+you submit should be written by yourself.
+Of course, you are free, and encouraged, to search online to solutions to
+problems you run into (though not full solutions to the exercises), and
+use those.
+A simple example would be to look up the syntax of a +for+ loop.

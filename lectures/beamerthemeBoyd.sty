@@ -1,0 +1,92 @@
+
+% -------- Packages ---------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{pgfpages}
+\usepackage{fancyhdr}
+
+
+% ----- Beamer tweaks -----
+\let\Tiny=\tiny % to prevent warnings from LaTeX (due to Beamer)
+\useoutertheme{infolines}
+\mode<beamer>{\usetheme{default}}
+\usecolortheme{dove}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent}
+\usefonttheme[onlymath]{serif}
+
+\linespread{1.5}
+\setbeamersize{text margin left=30pt}
+\setbeamersize{text margin right=30pt}
+
+\setbeamertemplate{itemize items}[ball]
+\setlength{\leftmargini}{1.2em}
+\setlength{\leftmarginii}{1em}
+
+\setcounter{tocdepth}{1}
+\setbeamertemplate{section in toc}[ball unnumbered]
+\AtBeginSection[]{
+  \begin{frame}[handout:0]
+    \frametitle{Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+  \addtocounter{framenumber}{-1}
+}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+
+\setbeamertemplate{frametitle}
+{
+    \begin{centering}
+        \large
+        \textbf{\insertframetitle}
+        \par
+    \end{centering}
+}
+
+% ----- Redefinition of frame (to reset footnote numbering at each frame) -----
+\let\oldframe\frame                         % backup old frame
+\let\endoldframe\endframe                   % backup old endframe
+\renewenvironment{frame}{%
+    \setcounter{footnote}{0}\oldframe%
+}{\endoldframe}                             % Reset the footnote counter at each frame
+
+
+% ----- Footnote symbols -----
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+
+% ----- Handout settings -----
+\mode<handout>{\usetheme{default}}
+\mode<handout>{\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm, landscape]}
+\mode<handout>{\pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}}
+\mode<handout>{\pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}}
+\mode<handout>{\pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}}
+\mode<handout>{\pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}}
+
+
+% ----- fancyhdr -----
+\setbeamertemplate{headline}{} % No header
+\setbeamertemplate{footline}{ % Footer
+    \leavevmode
+    \vskip0pt
+    \hbox{
+        % left
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}
+        \hspace*{25pt}
+        \usebeamerfont{title in head/foot}\textcolor{gray}{\lecturenr: \lecturetitle}
+    \end{beamercolorbox}
+
+    % right
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}
+            \usebeamerfont{page number in head/foot}\arabic{lectnum}-\insertpagenumber{}
+        \hspace*{30pt}
+    \end{beamercolorbox}
+    }
+    \vskip5pt
+}
+
+
+
+

@@ -1,0 +1,223 @@
+\section{Recursion} % (fold)
+\label{sec:recursion}
+
+% go slower, add more examples
+
+\begin{frame}\frametitle{Back to control flow}
+    \framesubtitle{}
+
+    To execute repetitive code, we have relied on \texttt{for} and \texttt{while}
+    loops.
+    \vfill
+    Furthermore, we used \texttt{if} statements to handle conditional statements.
+    \vfill
+    These statements are rather straightforward and easy to understand.
+
+\end{frame}
+
+\begin{frame}\frametitle{Recursion}
+    \framesubtitle{A new type of functions}
+
+    Recursive function solve problems by reducing them to smaller problems
+    of the same form.
+
+    \vfill
+
+    This allows recursive functions to call themselves...
+
+    \pause\vfill
+
+    \begin{itemize}
+        \item New paradigm
+        \item Powerful tool
+        \item Divide-and-conquer
+        \item Beautiful solutions
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{First example}
+    \framesubtitle{Add numbers}
+
+    Let's consider a trivial problem:
+
+    Suppose we want to add two positive numbers $a$ and $b$, but we can only add/subtract one.
+
+\end{frame}
+
+\begin{frame}\frametitle{First example}
+    \framesubtitle{Add numbers}
+
+    Non-recursive solution:
+    \codeblock{code/rec_nr_add.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{First example}
+    \framesubtitle{Add numbers}
+
+    Recursive solution:
+
+    \begin{itemize}
+        \item Simple case: b = 0, return a
+        \item Else, we can return 1 + add(a, b-1)
+    \end{itemize}
+    \pause
+    \codeblock{code/rec_add.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Base case and recursive steps}
+    \framesubtitle{Two parts of any recursive function}
+
+    Recursive functions consist of two parts:
+
+    \begin{description}
+        \item[base case] The base case is the trivial case that can be dealt with
+            easily.
+        \item[recursive step] The recursive step brings us slightly closer to
+            the base case and calls the function itself again.
+    \end{description}
+
+\end{frame}
+
+\begin{frame}\frametitle{Reversing a list}
+
+    How can we recursively reverse a list ([1, 2, 3] $\to$ [3, 2, 1]).
+
+    \begin{itemize}
+        \item If list is empty or has one element, the reverse is itself
+        \item Otherwise, reverse elements 2 to $n$, and append the first
+    \end{itemize}
+
+    \pause
+
+    \codeblock{code/rec_reverse.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Palindromes}
+    \framesubtitle{Another example}
+
+    A palindrome is a word that reads the same from both ways, such as
+    \emph{radar} or \emph{level}.
+    \vfill
+    Let's write a function that checks whether a given word is a palindrome.
+
+\end{frame}
+
+\begin{frame}\frametitle{The recursive idea}
+    \framesubtitle{}
+
+    Given a word, such as \emph{level}, we check:
+    \begin{itemize}
+        \item whether the first and last character are the same
+        \item whether the string with first and last character removed are the same
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Base case}
+    \framesubtitle{}
+
+    What's the base case in this case?
+
+    \pause
+    \begin{itemize}
+        \item The empty string is a palindrome
+        \item Any 1 letter string is a palindrome
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Implementation}
+    \framesubtitle{}
+
+    \codeblock{code/rec_palindrome.py}
+
+    \pause
+
+    What is an iterative solution?
+
+\end{frame}
+
+\begin{frame}\frametitle{Numerical integration}
+    \framesubtitle{}
+
+    Suppose we want to numerically integrate some function $f$:
+
+    \[
+        A = \int_a^b f(x) dx
+    \]
+
+    \pause\vfill
+
+    Trapezoid rule:
+
+    \begin{align*}
+        A &= \int_a^b f(x) dx\\
+         &= \int_a^{r_1} f(x) dx + \int_{r_1}^{r_2} f(x) dx + \ldots + \int_{r_{n-1}}^{b} f(x) dx\\
+         &\approx \frac{h}{2}\left((f(a) + f(r_1)) +  h(f(r_1) + f(r_2)) + \ldots + (f(b) + f(r_{n-1}))\right)\\
+         &= \frac{h}{2} (f(a) + f(b)) \quad+\quad h (f(r_1) + f(r_2) +\ldots+ f(r_{n-1}))
+    \end{align*}
+\end{frame}
+
+\begin{frame}\frametitle{Trapezoid rule}
+    \framesubtitle{Implementation}
+
+    \codeblock{code/rec_trapezoid.py}
+
+    Forget the math / code:
+    This function approximates the area under f between a and b using N points.
+
+\end{frame}
+
+\begin{frame}\frametitle{Key point}
+
+    \begin{itemize}
+        \item If function is flat, then we don't need many points.
+        \item If function is very wiggly, we need a lot of points.
+    \end{itemize}
+
+    So:
+
+    \begin{itemize}
+        \item How many points do we need?
+        \item What if function is flat in some areas, wiggly in others?
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Adaptive integration}
+    \framesubtitle{Recursive implementation}
+
+    Idea: Adaptively space points based on local curvature of function.
+
+    Areas where function is flat: few points, areas where function is wiggly: many points.
+
+    \pause
+
+    \codeblock{code/rec_adaptint.py}
+
+    Note: we do not need to use trapezoid rule.
+
+\end{frame}
+
+\begin{frame}\frametitle{Pitfalls}
+    \framesubtitle{}
+
+    Recursion can be very powerful, but there are some pitfalls:
+
+    \begin{itemize}
+        \item Have to ensure you always reach the base case.
+        \item Each successive call of the algorithm must be solving a simpler problem
+        \item The number of function calls shouldn't explode. (see exercises)
+        \item An iterative algorithm is always faster due to overhead of function calls.
+         (However, the iterative solution might be much more complex)
+    \end{itemize}
+
+\end{frame}
+
+% section recursion (end)
+
+

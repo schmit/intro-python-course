@@ -1,0 +1,379 @@
+\section{Classes} % (fold)
+\label{sec:classes}
+
+\begin{frame}\frametitle{Defining our own objects}
+    \framesubtitle{}
+
+    So far, we have seen many objects in the course that come standard with Python.
+
+    \begin{itemize}
+        \item Integers
+        \item Strings
+        \item Lists
+        \item Dictionaries
+        \item etc
+    \end{itemize}
+
+    \pause
+
+    But often one wants to build (much) more complicated structures.
+
+\end{frame}
+
+\begin{frame}\frametitle{Hangman example}
+
+    Objects:
+    \begin{itemize}
+        \item Game
+        \item Agents (different versions)
+    \end{itemize}
+\end{frame}
+
+% \begin{frame}\frametitle{Consider `building' a house in Python}
+%     \framesubtitle{Analogy}
+
+%     Suppose you have a program that needs to store all information about houses.
+%     How are we storing all information about this house?
+%     \pause
+%     \begin{itemize}
+%         \item A house might be a list with two elements, one for rooms, one for construction information
+%         \item house = [\{bathroom: ..., kitchen: ...\}, [brick, wood, ...]]
+%         \pause
+%         \item For the rooms we might again want to know about what's in the room, what it's made off
+%         \item So bathroom = [materials, bathtub, sink], where materials is a list
+%     \end{itemize}
+%     \pause
+%     We get a terribly nested structure, impossible to handle!
+
+% \end{frame}
+
+% \begin{frame}\frametitle{Object Oriented Programming}
+%     \framesubtitle{}
+
+%     Construct our own objects
+
+%     \begin{itemize}
+%         \item House
+%         \item Room
+%         \item etc
+%     \end{itemize}
+
+%     \pause\vfill
+
+%     \begin{itemize}
+%         \item Structure in familiar form
+%         \item Much easier to understand
+%     \end{itemize}
+
+% \end{frame}
+
+\begin{frame}\frametitle{Object Oriented Programming}
+    \framesubtitle{}
+
+    Express computation in terms of objects, which are instances of classes
+    \begin{description}
+        \item[Class] Blueprint (only one)
+        \item[Object] Instance (many)
+    \end{description}
+
+    \pause\vfill
+
+    Classes specify attributes (data) and methods to interact with the
+    attributes.
+
+\end{frame}
+
+\begin{frame}\frametitle{Python's way}
+    \framesubtitle{The simple way}
+
+    In languages such as C++ and Java: data protection with
+    private and public attributes and methods.
+
+    \vfill
+
+    Not in Python: only basics such as inheritance.
+
+    \vfill
+
+    Don't abuse power: works well in practice and leads
+    to simple code.
+\end{frame}
+
+\begin{frame}\frametitle{Simplest example}
+    \framesubtitle{Finally some code}
+
+    \codeblock{code/classes_leaf.py}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Initializing an object}
+    \framesubtitle{Constructor}
+
+    Define how a class is instantiated by defining the
+    \verb|__init__| \textit{method}.
+
+    \vfill
+
+    Seasoned programmer: in Python only one constructor
+    method.
+
+\end{frame}
+
+\begin{frame}\frametitle{Initializing an object}
+    \framesubtitle{An example}
+    The init or \textit{constructor} \textit{method}.
+
+    \codeblock{code/classes_init.py}
+
+    Note how we \textit{access} object \textit{attributes}.
+
+\end{frame}
+
+\begin{frame}\frametitle{Self}
+    \framesubtitle{}
+
+    The \texttt{self} parameter seems strange at first sight.
+    \vfill
+    It refers to the the object (instance) itself.
+    \vfill
+    Hence \texttt{self.color = color} sets the color of the object
+    \texttt{self.color} equal to the variable \texttt{color}.
+    \vfill
+
+\end{frame}
+
+\begin{frame}\frametitle{Another example}
+    \framesubtitle{}
+    Classes have \textit{methods} (similar to functions)
+
+    \codeblock{code/classes_stocks.py}
+
+    \pause
+
+    Recall: \textit{list.append()} or \textit{dict.items()}.
+    These are simply class methods!
+
+\end{frame}
+
+\begin{frame}\frametitle{Class attributes}
+    \framesubtitle{An example}
+
+    \codeblock{code/classes_class_attribute.py}
+
+    Class attributes are shared among all objects of that class.
+\end{frame}
+
+\begin{frame}\frametitle{Class hierarchy through inheritance}
+
+    It can be useful (especially in larger projects) to have a hierarchy of classes.
+
+    Example
+
+    \begin{itemize}
+        \item Animal
+            \begin{itemize}
+                \item Bird
+                    \begin{itemize}
+                        \item Hawk
+                        \item Seagull
+                        \item ...
+                    \end{itemize}
+                \item Pet
+                    \begin{itemize}
+                        \item Dog
+                        \item Cat
+                        \item ...
+                    \end{itemize}
+                \item ...
+            \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Inheritance}
+
+    Suppose we first define an abstract class
+
+    \codeblock{code/classes_animal.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Inheritance}
+    \framesubtitle{Dog}
+
+    We can define sub classes and inherit from another class.
+
+    \codeblock{code/classes_dog.py}
+
+\end{frame}
+
+% \begin{frame}\frametitle{Why inheritance}
+
+
+%     An abstract class that implements general functionality can be combined with
+%     several subclasses that implement details.
+
+%     \pause\vfill
+
+%     Example: statistical package with a general \textit{Model} class.
+%     Subclasses can include \textit{Linear regression}, \textit{Logistic regression}, etc.
+
+
+
+% \end{frame}
+
+\begin{frame}[fragile]\frametitle{Base methods}
+    \framesubtitle{}
+
+    Some methods to override
+    \begin{itemize}
+        \item \verb|__init__|: Constructor
+        \item \verb|__repr__|: Represent the object (machine)
+        \item \verb|__str__|: Represent the object (human)
+        \item \verb|__cmp__|: Compare
+    \end{itemize}
+
+\end{frame}
+
+
+% \begin{frame}[fragile]\frametitle{More useful methods}
+%     \framesubtitle{}
+
+%     Some more on this later!
+
+%     \begin{itemize}
+%         \item \verb|__contains__| for the \texttt{in} keyword
+%         \item \verb|__iter__| and \verb|next| for iterators
+%     \end{itemize}
+
+% \end{frame}
+
+\begin{frame}\frametitle{Example}
+    \framesubtitle{Rational numbers}
+
+    Implementing Rational numbers
+
+    \vfill
+
+    \codeblock{code/classes_rat.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Setup}
+    \framesubtitle{}
+
+    What information should the class hold?
+
+    \pause
+
+    \begin{itemize}
+        \item Numerator
+        \item Denominator
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Init}
+    \framesubtitle{Let's start coding}
+
+    Implement the \verb|__init__| method
+
+    \pause\vfill
+
+    \codeblock{code/classes_rat_init0.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Issues}
+    \framesubtitle{}
+
+    Issues?
+
+    \codeblock{code/classes_rat_init0.py}
+
+    \pause\vfill
+
+    Ignore the division by 0 for now, more on that later.
+
+\end{frame}
+
+\begin{frame}\frametitle{Greatest common divisor}
+    \framesubtitle{}
+
+    $\frac{10}{20}$ and $\frac{1}{2}$ are
+    the same rational.
+
+    \vfill
+
+    Implement a \texttt{gcd(a, b)} function that computes the greatest common
+    divisor of $a$ and $b$.
+
+    \vfill
+
+    \codeblock{code/classes_rat_gcd.py}
+
+    Exercise: Verify Euclidean Algorithm
+
+\end{frame}
+
+\begin{frame}\frametitle{Greatest common divisor}
+    \framesubtitle{Solution}
+
+
+    \codeblock{code/classes_rat_init.py}
+
+    \vfill
+
+    Why is this awesome?
+
+\end{frame}
+
+\begin{frame}\frametitle{Representing your class: Operator overloading}
+
+    Implement \texttt{\_\_repr\_\_} or \texttt{\_\_str\_\_}
+    early to \texttt{print}
+
+    \vfill
+
+    Debugging
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Operator overloading: adding two Rationals}
+    \framesubtitle{}
+
+    Add Rationals just like Ints and Doubles?\\
+    \verb|Rational(10,2) + Rational(4,3)|
+
+    To use \texttt{+}, we implement the \texttt{\_\_add\_\_} method
+
+    \vfill
+
+    \codeblock{code/classes_rat_add.py}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Operator overloading: Comparing}
+    \framesubtitle{}
+
+    \verb|__cmp__| compares objects
+
+    \begin{itemize}
+        \item If \texttt{self} is smaller than \texttt{other}, return a negative value
+        \item If \texttt{self} and \texttt{other} are equal, return 0
+        \item If \texttt{self} is larger than \texttt{other}, return a positive value
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{More on Operator Overloading}
+
+    To learn more:
+
+    \vfill
+
+    Google `Python operator overloading'.
+
+\end{frame}
+
+% section classes (end)
+

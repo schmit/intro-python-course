@@ -1,0 +1,130 @@
+\section{Generators and Iterators} % (fold)
+\label{sec:iterators}
+
+\begin{frame}[fragile]\frametitle{For loops}
+    \framesubtitle{}
+
+    Recall that in Python we can loop over the elements in a list simply
+    by saying
+
+    \begin{verbatim}
+        for elem in li:
+            # do something
+    \end{verbatim}
+
+    We also say that we are iterating over the list.
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Fibonnaci numbers}
+    \framesubtitle{}
+
+    Say we want to iterate over the first $n$ Fibonacci numbers:
+
+    \begin{verbatim}
+        for elem in fib(n):
+            # do something
+    \end{verbatim}
+
+    \vfill
+
+    How to implement Fib(n)?
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{fib(n)}
+    \framesubtitle{}
+
+    We can use our function from the \emph{lists} homework, which returns a list
+    with the first $n$ Fibonacci numbers.
+
+    \vfill
+
+    What happens when $n$ is large, say $n = 10^6$ or more generally $n = 10^k$?
+
+    \pause\vfill
+
+    Problem: we have to store the entire list...
+
+    \pause Eventually we will run out of memory.
+
+\end{frame}
+
+\begin{frame}\frametitle{Generators}
+    \framesubtitle{The yield keyword}
+
+    Instead, we can use so called generators
+
+    \vfill
+
+    Only difference with functions: use \texttt{yield} instead of \texttt{return}
+
+\end{frame}
+
+\begin{frame}\frametitle{Example: Range}
+    \framesubtitle{}
+
+    \codeblock{code/generator_range.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Advantage over lists}
+    \framesubtitle{}
+
+    Note, in this case we never store the entire list.
+    \vfill
+    This scales much better!
+    \vfill
+    (though Fibonacci numbers scale poorly, but you get the idea)
+
+\end{frame}
+
+\begin{frame}\frametitle{Back to Fibonacci}
+    \framesubtitle{}
+
+    How to write a generator for the Fibonacci sequence?
+
+    \codeblock{code/generator_fib.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Generators are a simple form of iterators}
+    \framesubtitle{}
+
+    Iterators underlie many aspects of Python such as
+    \begin{itemize}
+        \item List comprehensions
+        \item Generators
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Iterators are classes}
+    \framesubtitle{}
+
+    \begin{itemize}
+        \item Init method to initialize iterator
+        \item \verb|__iter__| method to set up the iterator
+        \item \verb|next| method to loop over the entries
+    \end{itemize}
+
+    More control, but also more code.
+
+\end{frame}
+
+\begin{frame}\frametitle{Range as iterator}
+    \framesubtitle{}
+
+    A slight overkill...
+    \codeblock{code/iterator_range.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Fibonacci iterator}
+    \framesubtitle{No room for whitespace :(}
+
+    \codeblock{code/iterator_fib.py}
+
+\end{frame}
+
+% section iterators (end)

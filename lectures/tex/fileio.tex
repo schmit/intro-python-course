@@ -1,0 +1,86 @@
+\section{File I/O} % (fold)
+\label{sec:file_i_o}
+
+\begin{frame}\frametitle{File I/O}
+    \framesubtitle{}
+
+    How to read from and write to disk.
+
+\end{frame}
+
+\begin{frame}\frametitle{The file object}
+    \framesubtitle{}
+
+    \begin{itemize}
+        \item Interaction with the file system is pretty straightforward in Python.
+        \item Done using \emph{file objects}
+        \item We can instantiate a file object using \texttt{open} or \texttt{file}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Opening a file}
+    \framesubtitle{}
+
+    \texttt{f = open(filename, option)}
+
+    \vfill
+
+    \begin{itemize}
+        \item filename: path and filename
+        \item option:
+            \begin{description}
+                \item['r'] read file
+                \item['w'] write to file
+                \item['a'] append to file
+            \end{description}
+    \end{itemize}
+
+    \vfill
+
+    We need to close a file after we are done:
+    \texttt{f.close()}
+
+\end{frame}
+
+\begin{frame}\frametitle{with open() as f}
+    \framesubtitle{}
+
+    Very useful way to open, read/write and close file:
+    \codeblock{code/fileio_with.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Reading files}
+    \framesubtitle{}
+
+    \begin{description}
+        \item[read()] Read entire line (or first $n$ characters, if supplied)
+        \item[readline()] Reads a single line per call
+        \item[readlines()] Returns a list with lines (splits at newline)
+    \end{description}
+
+    \pause
+
+    Another fast option to read a file
+    \codeblock{code/fileio_loopread.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Writing to file}
+    \framesubtitle{}
+
+    Use \texttt{write()} to write to a file
+
+    \codeblock{code/fileio_write.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{More writing examples}
+    \framesubtitle{}
+
+    \codeblock{code/fileio_writelist.py}
+
+\end{frame}
+
+% section file_i_o (end)

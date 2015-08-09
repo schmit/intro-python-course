@@ -1,0 +1,88 @@
+\section{Dictionaries} % (fold)
+\label{sec:dictionaries}
+
+\begin{frame}\frametitle{Dictionaries}
+    \framesubtitle{}
+
+    A dictionary is a \emph{collection} of \emph{key-value} pairs.
+
+    \vfill
+
+    An example: the keys are all words in the English language, and their
+    corresponding values are the meanings.
+
+    \vfill
+
+    Lists + Dictionaries = \$\$\$
+
+\end{frame}
+
+\begin{frame}\frametitle{Defining a dictionary}
+    \framesubtitle{}
+
+    \codeblock{code/dict_def.py}
+
+    Note how we can add more key-value pairs at any time.
+    Also, only condition on keys is that they are \emph{immutable}.
+
+\end{frame}
+
+\begin{frame}\frametitle{No duplicate keys}
+    \framesubtitle{}
+
+    Old value gets overwritten instead!
+
+    \codeblock{code/dict_duplicate_keys.py}
+
+\end{frame}
+
+\begin{frame}\frametitle{Access}
+    \framesubtitle{}
+
+    We can access values by keys, but not the other way around
+
+    \codeblock{code/dict_access.py}
+
+    \pause
+
+    Furthermore, we can check whether a key is in the dictionary by\\
+    \texttt{key in dict}
+
+\end{frame}
+
+% \begin{frame}\frametitle{Deleting elements}
+%     \framesubtitle{}
+
+%     We can remove a key-value pair by key using \texttt{del}. And we can \texttt{clear}
+%     the dictionary.
+
+%     \codeblock{code/dict_del.py}
+
+% \end{frame}
+
+\begin{frame}\frametitle{All keys, values or both}
+    \framesubtitle{}
+
+    Use \texttt{d.keys()}, \texttt{d.values()} and \texttt{d.items()}
+
+    \codeblock{code/dict_loops.py}
+
+    So how can you loop over dictionaries?
+
+\end{frame}
+
+\begin{frame}\frametitle{Small exercise}
+    \framesubtitle{}
+
+    Print all key-value pairs of a dictionary
+
+    \pause
+
+    \codeblock{code/dict_print.py}
+
+    Instead of \texttt{d.items()}, you can use \texttt{d.iteritems()} as well.
+    Better performance for large dictionaries.
+
+\end{frame}
+
+% section dictionaries (end)

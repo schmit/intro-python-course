@@ -1,0 +1,335 @@
+\section{Unit testing} % (fold)
+\label{sec:unit_testing}
+
+\begin{frame}\frametitle{Unit testing}
+    \framesubtitle{}
+
+    Unit tests: test \textbf{individual} pieces of code
+
+    For example, for factorial function, test
+    \begin{itemize}
+        \item 0! = 1
+        \item 3! = 6
+        \item etc.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Test driven development}
+    \framesubtitle{}
+
+    Some write \textbf{tests before code}
+
+    Reasons:
+    \begin{itemize}
+        \item Focus on the requirements
+        \item Don't write too much
+        \item Safely refactor code
+        \item When collaborating: don't break other's code
+        \item Faster
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Test cases}
+    \framesubtitle{}
+
+    How to construct test cases?
+
+    A \emph{test case} should answer a \textbf{single question} about the code,
+
+    A test case should
+    \begin{itemize}
+        \item \textbf{Run by itself}, no human input required
+        \item \textbf{Determine on its own} whether the test has passed or failed
+        \item Be \textbf{separate} from other tests
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{What to test}
+    \framesubtitle{}
+
+    \begin{itemize}
+        \item Known values
+        \item Sanity check (for conversion functions for example)
+        \item Bad input
+        \begin{itemize}
+            \item Input is too large?
+            \item Negative input?
+            \item String input when expected an integer?
+        \end{itemize}
+        \item etc: very dependent on problem
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{unittest}
+    \framesubtitle{}
+
+    The standard Python module \texttt{unittest} helps you write unit tests.
+
+    \codeblock{code/unit_example.py}
+
+
+    Not complicated, but hard to get started
+    % a little slower here
+
+\end{frame}
+
+% \begin{frame}\frametitle{assert}
+%     \framesubtitle{}
+
+%     We can use a number of methods to check for failures:
+%     \begin{itemize}
+%         \item \texttt{assertEqual}
+%         \item \texttt{assertNotEqual}
+%         \item \texttt{assertTrue}, \texttt{assertFalse}
+%         \item \texttt{assertIn}
+%         \item \texttt{assertRaises}
+%         \item \texttt{assertAlmostEqual}
+%         \item \texttt{assertGreater}, \texttt{assertLessEqual}
+%         \item etc. (see Docs)
+%     \end{itemize}
+
+% \end{frame}
+
+\begin{frame}\frametitle{Alternatives}
+
+\begin{itemize}
+    \item Nose
+    \item Pytest
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]\frametitle{Pytest}
+
+\begin{itemize}
+    \item Easy no-boilerplate testing
+    \item Automatically discovers tests
+\end{itemize}
+
+\begin{verbatim}
+$ pip install -U pytest
+\end{verbatim}
+
+
+Test discovery: (basics)
+\begin{itemize}
+    \item Scans files starting with \texttt{test\_}
+    \item Run functions starting with \texttt{test\_}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Example: primes}
+
+    Create two files in a directory:
+
+    \begin{itemize}
+        \item primes.py -- Implementation
+        \item test\_primes.py -- Tests
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Initial code}
+
+primes.py
+\codeblock{code/unit_primes0.py}
+
+test\_primes.py
+\codeblock{code/unit_test_primes0.py}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Pytest output}
+
+\begin{verbatim}
+$ py.test
+\end{verbatim}
+
+\begin{verbatim}[fontsize=\tiny]
+============================= test session starts ==============================
+platform darwin -- Python 2.7.9 -- py-1.4.27 -- pytest-2.7.1
+rootdir: /Users/sps/Dropbox/cc/cme193/demo/unit_testing, inifile:
+collected 2 items
+
+test_primes.py .F
+
+=================================== FAILURES ===================================
+______________________________ test_is_four_prime ______________________________
+
+    def test_is_four_prime():
+>       assert not is_prime(4)
+E       assert not True
+E        +  where True = is_prime(4)
+
+test_primes.py:7: AssertionError
+====================== 1 failed, 1 passed in 0.03 seconds =====================
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}\frametitle{Fixing is\_prime}
+
+Simplest solution that passes tests:
+
+primes.py
+\codeblock{code/unit_primes1.py}
+
+
+`Premature optimization is the root of all evil' - Donald Knuth
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Pytest output}
+
+\begin{verbatim}
+$ py.test
+\end{verbatim}
+
+\begin{verbatim}[fontsize=\tiny]
+============================= test session starts ==============================
+platform darwin -- Python 2.7.9 -- py-1.4.27 -- pytest-2.7.1
+rootdir: /Users/sps/Dropbox/cc/cme193/demo/unit_testing, inifile:
+collected 2 items
+
+test_primes.py ..
+
+=========================== 2 passed in 0.01 seconds ==========================
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}\frametitle{Add more tests}
+
+
+\codeblock{code/unit_test_primes1.py}
+
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Pytest output}
+
+\begin{verbatim}[fontsize=\tiny]
+============================= test session starts ==============================
+platform darwin -- Python 2.7.9 -- py-1.4.27 -- pytest-2.7.1
+rootdir: /Users/sps/Dropbox/cc/cme193/demo/unit_testing, inifile:
+collected 5 items
+
+test_primes.py FF...
+
+=================================== FAILURES ===================================
+______________________________ test_is_zero_prime ______________________________
+
+    def test_is_zero_prime():
+>       assert not is_prime(0)
+E       assert not True
+E        +  where True = is_prime(0)
+
+test_primes.py:4: AssertionError
+______________________________ test_is_one_prime _______________________________
+
+    def test_is_one_prime():
+>       assert not is_prime(1)
+E       assert not True
+E        +  where True = is_prime(1)
+
+test_primes.py:7: AssertionError
+====================== 2 failed, 3 passed in 0.05 seconds ======================
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[t]\frametitle{Some more tests}
+
+\begin{itemize}
+    \item Negative numbers
+    \item Non integers
+    \item Large prime
+    \item List of known primes
+    \item List of non-primes
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{When all tests pass...}
+
+\begin{itemize}
+    \item First make sure all tests pass
+    \item Then optimize code, making sure nothing breaks
+\end{itemize}
+
+Now you can be confident that whatever algorithm you use, it still works as desired!
+
+\end{frame}
+
+% \begin{lstlisting}
+% def is_prime(x):
+%     return True
+%     }
+% \end{lstlisting}
+
+% \begin{frame}\frametitle{Some tips for exercise 15.2}
+
+% \textbf{Problem:} Write a program \texttt{primes.py} that takes two command line arguments,
+%         $a < b$, and returns all prime numbers between $a$ and $b$ (inclusive).
+%         Write a seperate test script \texttt{primestest.py} that contains
+%         unittests for all functions in your script.
+% \vfill\pause
+% \textbf{Functions:}
+%     \begin{enumerate}
+%         \item Extract $a$ and $b$ from command line arguments
+%         \item Function that tests whether a number is prime: \texttt{is\_prime}
+%         \item Function that uses the \texttt{is\_prime} function to construct a list with prime numbers between $a$ and $b$
+%     \end{enumerate}
+
+% Then your script can combine all of these
+
+% \end{frame}
+
+
+% \begin{frame}\frametitle{tests for is\_prime}
+
+% \textbf{Tests:}
+
+% \begin{enumerate}
+%     \item 0 is not prime
+%     \item 1 is not prime
+%     \item 2 is prime
+%     \item 3 is prime
+%     \item 4 is not prime
+%     \item -3 is not prime
+%     \item 9 is not prime
+%     \item 13 is prime
+%     \item 31 is prime
+% \end{enumerate}
+
+% \end{frame}
+
+
+% \begin{frame}\frametitle{tests for is\_prime}
+
+%     Set up functions
+
+%     \codeblock{code/unit_primes.py}
+
+%     (Some prefer to do this step after writing tests)
+
+% \end{frame}
+
+% \begin{frame}\frametitle{tests for is\_prime}
+
+%     Write tests...
+
+%     \codeblock{code/unit_primetest.py}
+
+%     then update functions until all tests pass.
+
+% \end{frame}
+
+
+
+% section unit_testing (end)

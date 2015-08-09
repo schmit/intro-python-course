@@ -1,0 +1,120 @@
+# jemdoc: menu{MENU}{project.html}
+= CME 193 - Introduction to Scientific Python
+
+== Project
+
+The project is meant for you to demonstrate the skills you have learnt by
+taking this class.
+You are free in the choice of your project.
+However, picking the right project can be hard,
+so it might a safe option to pick one of the project ideas listed below.
+
+The goal of the project should be to have fun.
+You take this class because you want to learn about Python,
+and this is your opportunity to use Python in any way you like.
+The project should take you around 20 hours of work as a rough estimate.
+
+=== Delivarables and deadlines
+
+- Project proposal, due *at the beginning of Lecture 4, on April 23*.
+A brief write-up should describe what you intend to do.
+This document should be a /pdf/ file, and should be about
+two paragraphs long.
+
+- Final version of Python scripts, due *one week after Lecture 8, on May 28 at noon*.
+The final version should include all source code and data, and be /zipped/.
+Make sure your code runs (whatever the input) smoothly.
+
+- Final write-up, due *one week after Lecture 8, at noon*
+An updated version of your write-up, explaining things that have
+changed and your results.
+
+There are *no late days* and *no exceptions*.
+You are to work on the project on your own, though you are strongly
+encouraged to discuss your project and code with others.
+
+Please turn in all your work using the *Dropbox on Coursework*.
+
+=== Project ideas
+
+Below you can find some project ideas, to give you a sense of what would be
+possible and the scope of the project. Some of the below might be a bit
+ambitious, but I think it is good to be ambitious and
+end up not implementing everything completely.
+
+Of course, you are very welcome to do something very different. Let
+the following list then give you an idea of the scope of your project.
+
+==== Neural networks
+
+Recently, neural networks and deep learning have become very fashionable.
+You could either explore the existing packages and work on a dataset, or
+implement a neural network trainer yourself, which should include training and
+prediction.
+Of course your own implementation should not be as sophisticated as the ones
+in some of the packages, but it will give you a good understanding of neural
+networks.
+
+References
+ - [http://www.deeplearning.net/tutorial/ A tutorial on deep learning]
+ - [http://bbabenko.tumblr.com/post/83319141207/convolutional-learnings-things-i-learned-by
+    Blogpost about implementing a convolutional neural network]
+- [http://pybrain.org/pages/home PyBrain, a neural network library for Python]
+    Also check out the source code on
+    [https://github.com/pybrain/pybrain/tree/master/pybrain github].
+
+==== Movie recommendation system
+
+The [http://files.grouplens.org/datasets/movielens/ml-100k/ MovieLens 100k] dataset
+holds information on a reasonably large set of movies and user ratings.
+Implement a recommendation system that predicts movie ratings for users,
+finds similar movies and users, etc.
+
+==== Simulation of Uber and Lyft
+
+[https://www.uber.com/ Uber] and [http://www.lyft.com/ Lyft] are companies that
+connect cab drivers to customers.
+Implement a simulation system where drivers roam around in a world (a 2D grid)
+and customers pop up dynamically, are assigned to drivers, and then brought
+to their destination.
+Visualize the simulation, for example using Matplotlib.
+
+==== College football stats
+
+[http://www.cfbstats.com/blog/college-football-data/ Colege football stats] has
+comprehensive datasets on the last 9 years of college football.
+There are plenty of ways to be creative, one option would be to find a new
+model to predict outcomes of games or rank teams.
+Start simple and improve your model as you add more of the data into your analysis.
+
+==== Enigma machine
+
+The [http://en.wikipedia.org/wiki/Enigma_machine Enigma machine] is a well known
+device to encrypt messages, primarily used by the Germans in the second world
+war and famously cracked by the Allied forces.
+It would be interesting to create a Python version of the Enigma machine, that
+can encrypt and decrypt messages.
+You can find plenty of information online about the Enigma machine.
+Of course, you could also implement more contemporary encryption methods.
+
+==== Dynimical systems and predator-prey models
+
+Predator-prey models, such as the [http://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equation
+Lotka-Volterra equations], describe the dynamics of biological systems where
+two species interact.
+Using Python, one is able to simulate much more complicated biological systems,
+with multiple species and additional factors (e.g. location, proximity to water,
+etc.).
+Postulate the features of a dynamical system, implement a simulation and
+present results graphically.
+
+==== 2048 Game
+
+The game [http://2048game.com/ 2048] is a simple yet addictive game.
+Write the game in Python, such that you can play it in your terminal.
+Additionaly, write a computer agent that plays the game automatically and
+does reasonably well by coming up with some clever heuristics.
+
+
+
+
